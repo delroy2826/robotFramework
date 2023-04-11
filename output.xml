@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230330 10:58:41.690" rpa="false" schemaversion="3">
+<suite id="s1" name="RobotFrameWork" source="C:\Users\delolive\Desktop\PycharmProject\RobotFrameWork">
+<suite id="s1-s1" name="Tests" source="C:\Users\delolive\Desktop\PycharmProject\RobotFrameWork\tests">
+<suite id="s1-s1-s1" name="testDemo7" source="C:\Users\delolive\Desktop\PycharmProject\RobotFrameWork\tests\testDemo7.robot">
+<test id="s1-s1-s1-t1" name="Validate Child Window Functionality" line="49">
+<kw name="open browser with with defined browser" library="Generic" type="SETUP">
+<arg>Firefox</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser_name}</arg>
+<arg>executable_path=driver/${browser_name}.exe</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20230330 10:58:41.908" level="INFO">Creating an instance of the Firefox WebDriver.</msg>
+<msg timestamp="20230330 10:58:45.228" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20230330 10:58:45.230" level="FAIL">SessionNotCreatedException: Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line
+</msg>
+<status status="FAIL" starttime="20230330 10:58:41.908" endtime="20230330 10:58:45.233"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20230330 10:58:45.233" endtime="20230330 10:58:45.234"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20230330 10:58:45.234" endtime="20230330 10:58:45.234"/>
+</kw>
+<status status="FAIL" starttime="20230330 10:58:41.908" endtime="20230330 10:58:45.234"/>
+</kw>
+<kw name="close browser session" library="Generic" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230330 10:58:45.234" endtime="20230330 10:58:45.234"/>
+</kw>
+<status status="PASS" starttime="20230330 10:58:45.234" endtime="20230330 10:58:45.234"/>
+</kw>
+<status status="FAIL" starttime="20230330 10:58:41.907" endtime="20230330 10:58:45.236">Setup failed:
+SessionNotCreatedException: Message: Expected browser binary location, but unable to find binary in default location, no 'moz:firefoxOptions.binary' capability provided, and no binary flag set on the command line
+</status>
+</test>
+<doc>To Validate Login Form</doc>
+<status status="FAIL" starttime="20230330 10:58:41.712" endtime="20230330 10:58:45.237"/>
+</suite>
+<status status="FAIL" starttime="20230330 10:58:41.710" endtime="20230330 10:58:45.239"/>
+</suite>
+<status status="FAIL" starttime="20230330 10:58:41.693" endtime="20230330 10:58:45.241"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="RobotFrameWork">RobotFrameWork</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Tests">RobotFrameWork.Tests</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="testDemo7">RobotFrameWork.Tests.testDemo7</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,7 @@
+.idea
+customlibraries/__pycache__
+tests/pabot_results
+tests/log.html
+tests/output.xml
+tests/report.html
+venv

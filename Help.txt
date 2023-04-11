@@ -1,0 +1,90 @@
+# robot .  #Executes all robot files in sequence
+# pabot .  #Executed all robot files in parallel
+# pabot --testlevelsplit <path to test suite file> #Executes all test cases in test file parallely
+# robot -t  <"tase case name"> <parth to test suite file or .> # Executes Specific test case
+# robot -t < "partialname*"> <parth to test suite file or .> # Executes Specific test case
+# robot --include <tagname> <.> #Runs Specific tagged test case
+# robot -i <tagname1> -i <tagname2> <testfilename or .> #Executes tagname1 and tagname2
+# robot -e <tagname1> -i <tagname2> <testfilename or .> #Excludes tagname1 and includes tagname2
+# robot --rerunfailed output.xml . #Reruns failed test cases
+# robot --variable <browser_name:Chrome> <testfile name or .> #Executes the browser passed as Arguement
+
+IMPORTANT LINKS
+A) Practice Links
+1) https://rahulshettyacademy.com/loginpagePractise/
+2) https://practicetestautomation.com/
+
+B)RobotFramework Links
+https://robotframework.org/#resources
+https://robotframework.org/robotframework/latest/libraries/BuiltIn.html#library-documentation-top
+https://robotframework.org/robotframework/latest/libraries/Collections.html
+https://robotframework.org/SeleniumLibrary/SeleniumLibrary.html
+https://robocorp.com/docs/languages-and-frameworks/robot-framework/cheat-sheet
+https://robotframework.org/robotframework/latest/libraries/String.html#library-documentation-top
+
+# Jenkins Setup
+# 1) Download Jenkins https://www.jenkins.io/download/   War file
+# 2) open cmd where the war file is located and run following command
+# Syntax: java -jar jenkin.war -httpPort=<portnumber or 9090>
+#         java -jar jenkins.war -httpPort=9090
+# 3) Save below details got from above output
+# 362ea5b854564fc699194b4efaf51c14
+# C:\Users\delolive\.jenkins\secrets\initialAdminPassword
+# 4) Open Browser and enter
+# localhost:8080
+# and paste the above credential
+# 5) Click on Install Suggested Plugin
+# 6) Create first admin user
+# username : delolive
+# pw: Q1w2e3r4t5
+#
+# a) New Item->Enter item name-> Freestyle Project->ok
+# b) build configuration
+# Configure
+#         -> General -> Advanced -> Use custom WorkSpace->Directory
+#                 Example: Path of the Project Folder
+#                 C:\Users\delolive\Desktop\PycharmProject\RobotFrameWork
+#         -> General -> This Project is Parameterized
+#                 1)Add Parameter-> Choice Parameter
+#                         Name:
+#                                 browser_name
+#                         Choices:
+#                                 Chrome
+#                                 Firefox
+#                 2)Add Parameter-> Choice Parameter
+#                         Name:
+#                                 TestExecute
+#                         Choices:
+#                                 .
+#                                 testDemo1.robot
+#                                 testDemo2.robot
+#                                 testDemo3.robot
+#                                 testDemo4.robot
+#                                 testDemo5.robot
+#                                 testDemo6.robot
+#                                 testDemo6UsingTemplate.robot
+#                                 testDemo7.robot
+#                                 testDemo8.robot
+#                 3)Add Parameter-> Choice Parameter
+#                         Name:
+#                                 testtags
+#                         Choices:
+#                                 ALL
+#                                 SMOKE
+#                                 SANITY
+#                                 REGRESSION
+#                                 SIMPLE
+#
+#         -> Build Steps -> Add Build Steps -> Execute Windows batch command
+#                 call venv\Scripts\activate.bat
+#                 cd tests
+#                 robot .
+#         ->If using parameterized project Build Steps -> Add Build Steps -> Execute Windows batch command
+#                 call venv\Scripts\activate.bat
+#                 cd tests
+#                 robot --variable browser_name:%browser_name% %TestExecute%
+#
+#         -> Save
+
+
+
