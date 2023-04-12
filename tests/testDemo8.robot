@@ -12,6 +12,7 @@ ${string3}  Dog
 ${number}   ${1}
 @{list}   A   B   C
 &{dictionary}   string=${string1}   number=${number}    list=@{list}
+${COUNTER}=     0
 
 *** Test Cases ***
 Test Case 1
@@ -83,7 +84,62 @@ Test Case 14
     [Tags]    SIMPLE
     Loop A Dictionary
 
+Test Case 15
+    [Tags]    SIMPLE
+    While loop with default limit of 10000 iteration
+    While loop when the default limit is hit
+    Loop while condition evaluates to True
+    Skip loop iteration with continue
+    Break while loop
+
 *** Keywords ***
+Break while loop
+    ${x}=   Set Variable    ${0}
+    WHILE    ${x}<10
+        ${x}=   Evaluate    ${x}+1
+        IF  ${x}==5
+            BREAK
+        END
+        Log To Console    ${x} is the value
+    END
+
+Skip loop iteration with continue
+    ${x}=   Set Variable    ${0}
+    WHILE    ${x}<10
+        ${x}=   Evaluate    ${x}+1
+        IF  ${x}==5
+            CONTINUE
+        END
+        Log To Console    ${x} is the value
+    END
+
+Loop while condition evaluates to True
+    ${x}=   Set Variable    ${0}
+    WHILE    ${x}<10
+        Log To Console    ${x} is the value
+        ${x}=   Evaluate    ${x}+1
+    END
+
+While loop when the default limit is hit
+    TRY
+        WHILE    True   limit=10
+            ${COUNTER}=     EVALUATE   ${COUNTER}+1
+            Log To Console     ${COUNTER}
+        END
+    EXCEPT    WHILE loop was aborted    type=start
+        Log To Console    The loop did not finish within the limit
+    END
+
+While loop with default limit of 10000 iteration
+    TRY
+        WHILE    True   limit=9999
+            ${COUNTER}=     EVALUATE   ${COUNTER}+1
+            Log To Console     ${COUNTER}
+        END
+    EXCEPT    WHILE loop was aborted    type=start
+        Log To Console    The loop aborted
+    END
+
 Loop A Dictionary
     FOR     ${dict_tuple}   IN      &{dictionary}
         Log To Console    ${dict_tuple}
