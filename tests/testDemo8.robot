@@ -16,35 +16,35 @@ ${COUNTER}=     0
 
 *** Test Cases ***
 Test Case 1
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     Log To Console    This is test case 1
 
 Test Case 2
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     Log To Console    This is test case 2
 
 Test Case 3
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     Log To Console    This is test case 3
 
 Test Case 4
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     Log To Console    This is test case 4
 
 Test Case 5
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     Log To Console    This is test case 5
 
 Test Case 6
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     Log To Console    This is test case 6
 
 Test Case 7
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     Loop over a list of items and log each of them
 
 Test Case 8
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     # https://robocorp.com/docs/languages-and-frameworks/robot-framework/conditional-execution
     If condition is true and if condtion is false   ${conditionTrue}    ${conditionFalse}
     If condition for comparing two strings using equal operator  ${string1}  ${string2}
@@ -54,45 +54,55 @@ Test Case 8
     If condition with expression    ${string1}  ${string2}  ${string3}
 
 Test Case 9
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     If and Else condition construct
     If and Else if and else construct
 
 Test Case 10
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     ${dictionarydata}=  Creating Dictionary in robot framework
     validating if the key is present in the created dictionary  ${dictionarydata}
     print value from dictionarydata     ${dictionarydata}
 
 Test Case 11
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     Execute For Loop only Three Times
     Breaking out of For loop
 
 Test Case 12
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     Log To Console    ${number} @{list} &{dictionary}
     Log To Console    ${list}[2]
     Log To Console    ${dictionary}[string]
 
 Test Case 13
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     Loop A list
     Nested Loop List
 
 Test Case 14
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     Loop A Dictionary
 
 Test Case 15
-    [Tags]    SIMPLE
+    [Tags]    SIMPLE    ALL
     While loop with default limit of 10000 iteration
     While loop when the default limit is hit
     Loop while condition evaluates to True
     Skip loop iteration with continue
     Break while loop
 
+Test Case 16
+    Check if string is in substring
+
 *** Keywords ***
+Check if string is in substring
+    IF  "Weekly" in "boss"
+        Log To Console    "True"
+    ELSE
+        Log To Console    "False"
+    END
+
 Break while loop
     ${x}=   Set Variable    ${0}
     WHILE    ${x}<10

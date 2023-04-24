@@ -5,6 +5,7 @@ Documentation   A resource file with reusable keywords and variables.
 ...             Domain specific language. They utilize keywords provided
 ...             by the imported SeleniumLibrary.
 Library     SeleniumLibrary
+Library    String
 
 *** Variables ***
 ${URL}  https://rahulshettyacademy.com/loginpagePractise/
@@ -14,6 +15,8 @@ ${password}     learning
 ${radio_btnuser}    user
 ${drp_down_teach}   teach
 ${browser_name}     Chrome
+${navigation_element}   //span[text()='navigation_title']//preceding-sibling::i
+${navigation_opt}       //span[text()='navigation_opt']//parent::a
 
 *** Keywords ***
 open the browser with the mortage payment URL
@@ -32,3 +35,19 @@ Wait until element is located in the page
 
 close browser session
     Close Browser
+
+Open Browser with passed url
+    [Arguments]    ${URL_Param}
+    Create Webdriver    Chrome  executable_path=driver/chromedriver.exe
+    Maximize Browser Window
+    Go To   ${URL_Param}
+    Sleep    5
+
+Navigate to
+    [Arguments]    ${navigation_title}  ${navigation_option}
+    ${nav_main}=    Replace String    ${navigation_element}     navigation_title    ${navigation_title}
+    Click Element    ${nav_main}
+    Sleep    5
+    ${nav_option}=    Replace String    ${navigation_opt}     navigation_opt    ${navigation_option}
+    Click Link    ${nav_option}
+    Sleep    5
