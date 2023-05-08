@@ -4,6 +4,7 @@ Resource    ../PO/Generic.robot
 Resource    ../PO/DashboardPage.robot
 Resource    ../PO/SecBrowserSubFramePage.robot
 Resource    ../PO/SecBrowserSubAlertPage.robot
+Resource    ../PO/SecBrowserSubWindowPage.robot
 Test Setup    Open Browser With passed Url    ${URL_Param}
 Test Teardown   close browser session
 Library    String
@@ -78,3 +79,27 @@ Alert Handling Alert (Prompt Dialog)
     Log To Console    ${message} - Message Displayed
     ${message} =    Get Message After Clicking on Alert     Alert (Prompt Dialog)
     Log To Console    ${message} - Cancle Success Message
+
+Handle Click and Confirm new Window Opens
+    [Tags]    WINDOW_HANDLE    ALL
+    Navigate to     Browser     Window
+    ${handles}=     Perform Click and Confirm new Window Opens  https://leafground.com/dashboard.xhtml
+    Verify control is back to parent Window     ${handles}      https://leafground.com/window.xhtml
+
+Handle Find the number of opened tabs
+    [Tags]    WINDOW_HANDLE    ALL
+    Navigate to     Browser     Window
+    ${handles}=     Perform Find the number of opened tabs  https://leafground.com/table.xhtml
+    Verify control is back to parent Window     ${handles}      https://leafground.com/window.xhtml
+
+Handle Close all windows except Primary
+    [Tags]    WINDOW_HANDLE    ALL
+    Navigate to     Browser     Window
+    ${handles}=     Perform Close all windows except Primary  https://leafground.com/alert.xhtml
+    Verify control is back to parent Window     ${handles}      https://leafground.com/window.xhtml
+
+Handle Wait for 2 new tabs to open
+    [Tags]    WINDOW_HANDLE    ALL
+    Navigate to     Browser     Window
+    ${handles}=     Perform Wait for 2 new tabs to open
+    Verify control is back to parent Window     ${handles}      https://leafground.com/window.xhtml

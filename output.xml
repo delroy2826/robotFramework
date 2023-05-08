@@ -1,394 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230427 15:43:56.506" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230508 14:50:33.814" rpa="false" schemaversion="3">
 <suite id="s1" name="testDemo10" source="C:\Users\delolive\Desktop\PycharmProject\robotFramework\tests\testDemo10.robot">
-<test id="s1-t1" name="Select Weekly Tasks" line="15">
+<test id="s1-t1" name="Handle Wait for 2 new tabs to open" line="101">
 <kw name="Open Browser with passed url" library="Generic" type="SETUP">
 <arg>${URL_Param}</arg>
 <kw name="Create Webdriver" library="SeleniumLibrary">
 <arg>Chrome</arg>
 <arg>executable_path=driver/chromedriver.exe</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230427 15:43:56.740" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230427 15:43:56.740" endtime="20230427 15:44:00.090"/>
+<msg timestamp="20230508 14:50:34.027" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20230508 14:50:34.027" endtime="20230508 14:50:36.755"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230427 15:44:00.090" endtime="20230427 15:44:00.219"/>
+<status status="PASS" starttime="20230508 14:50:36.755" endtime="20230508 14:50:36.871"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${URL_Param}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230427 15:44:00.219" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
-<status status="PASS" starttime="20230427 15:44:00.219" endtime="20230427 15:44:06.576"/>
+<msg timestamp="20230508 14:50:36.871" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
+<status status="PASS" starttime="20230508 14:50:36.871" endtime="20230508 14:50:43.074"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:44:11.579" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:44:06.576" endtime="20230427 15:44:11.579"/>
+<msg timestamp="20230508 14:50:48.075" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230508 14:50:43.074" endtime="20230508 14:50:48.075"/>
 </kw>
-<status status="PASS" starttime="20230427 15:43:56.740" endtime="20230427 15:44:11.579"/>
-</kw>
-<kw name="Select Weekly checkbox from Weekly tasks table" library="DashboardPage">
-<kw name="Get WebElements" library="SeleniumLibrary">
-<var>${actual_list}</var>
-<arg>${tbl_weekly_tasks}</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20230427 15:44:11.598" level="INFO">${actual_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="72118d3bbeb907d1d28b07ebf66708bc", element="6f721c04-a1c9-40a6-ab9a-36e4728944d4")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
-<status status="PASS" starttime="20230427 15:44:11.580" endtime="20230427 15:44:11.598"/>
-</kw>
-<for flavor="IN">
-<var>${element}</var>
-<value>@{actual_list}</value>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="72118d3bbeb907d1d28b07ebf66708bc", element="6f721c04-a1c9-40a6-ab9a-36e4728944d4")&gt;</var>
-<if>
-<branch type="IF" condition="&quot;Weekly&quot; in &quot;${element.text}&quot;">
-<kw name="Replace String" library="String">
-<var>${tbl_value_updated}</var>
-<arg>${tbl_value}</arg>
-<arg>tabledata</arg>
-<arg>${element.text}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:11.616" endtime="20230427 15:44:11.616"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${tbl_value_updated}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:11.616" endtime="20230427 15:44:11.616"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:11.616" endtime="20230427 15:44:11.616"/>
-</kw>
-<status status="NOT RUN" starttime="20230427 15:44:11.598" endtime="20230427 15:44:11.616"/>
-</branch>
-<status status="PASS" starttime="20230427 15:44:11.598" endtime="20230427 15:44:11.616"/>
-</if>
-<status status="PASS" starttime="20230427 15:44:11.598" endtime="20230427 15:44:11.616"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="72118d3bbeb907d1d28b07ebf66708bc", element="d3a5548c-299a-4d3c-a1f2-7c751b665bac")&gt;</var>
-<if>
-<branch type="IF" condition="&quot;Weekly&quot; in &quot;${element.text}&quot;">
-<kw name="Replace String" library="String">
-<var>${tbl_value_updated}</var>
-<arg>${tbl_value}</arg>
-<arg>tabledata</arg>
-<arg>${element.text}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:44:11.658" level="INFO">${tbl_value_updated} = //span[contains(@class,'title') and text()='Weekly Tasks']//parent::div//parent::div//div[contains(@id,'content')]//div[contains(@class,'select')]//following-sibling::span[text()='Weekly Assignments']...</msg>
-<status status="PASS" starttime="20230427 15:44:11.640" endtime="20230427 15:44:11.658"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${tbl_value_updated}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:44:11.658" level="INFO">Clicking element '//span[contains(@class,'title') and text()='Weekly Tasks']//parent::div//parent::div//div[contains(@id,'content')]//div[contains(@class,'select')]//following-sibling::span[text()='Weekly Assignments']//preceding-sibling::div//div[contains(@class,'chkbox')]'.</msg>
-<status status="PASS" starttime="20230427 15:44:11.658" endtime="20230427 15:44:11.722"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:44:14.722" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:44:11.722" endtime="20230427 15:44:14.722"/>
-</kw>
-<status status="PASS" starttime="20230427 15:44:11.616" endtime="20230427 15:44:14.722"/>
-</branch>
-<status status="PASS" starttime="20230427 15:44:11.616" endtime="20230427 15:44:14.722"/>
-</if>
-<status status="PASS" starttime="20230427 15:44:11.616" endtime="20230427 15:44:14.722"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="72118d3bbeb907d1d28b07ebf66708bc", element="748ea29b-bf94-4ea0-ae35-b7cf529ea00e")&gt;</var>
-<if>
-<branch type="IF" condition="&quot;Weekly&quot; in &quot;${element.text}&quot;">
-<kw name="Replace String" library="String">
-<var>${tbl_value_updated}</var>
-<arg>${tbl_value}</arg>
-<arg>tabledata</arg>
-<arg>${element.text}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:44:14.756" level="INFO">${tbl_value_updated} = //span[contains(@class,'title') and text()='Weekly Tasks']//parent::div//parent::div//div[contains(@id,'content')]//div[contains(@class,'select')]//following-sibling::span[text()='Weekly Coding']//pre...</msg>
-<status status="PASS" starttime="20230427 15:44:14.742" endtime="20230427 15:44:14.756"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${tbl_value_updated}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:44:14.756" level="INFO">Clicking element '//span[contains(@class,'title') and text()='Weekly Tasks']//parent::div//parent::div//div[contains(@id,'content')]//div[contains(@class,'select')]//following-sibling::span[text()='Weekly Coding']//preceding-sibling::div//div[contains(@class,'chkbox')]'.</msg>
-<status status="PASS" starttime="20230427 15:44:14.756" endtime="20230427 15:44:14.832"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:44:17.833" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:44:14.832" endtime="20230427 15:44:17.833"/>
-</kw>
-<status status="PASS" starttime="20230427 15:44:14.722" endtime="20230427 15:44:17.833"/>
-</branch>
-<status status="PASS" starttime="20230427 15:44:14.722" endtime="20230427 15:44:17.833"/>
-</if>
-<status status="PASS" starttime="20230427 15:44:14.722" endtime="20230427 15:44:17.833"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="72118d3bbeb907d1d28b07ebf66708bc", element="8e42d5e8-40eb-40ef-a7df-ea0a20e2add8")&gt;</var>
-<if>
-<branch type="IF" condition="&quot;Weekly&quot; in &quot;${element.text}&quot;">
-<kw name="Replace String" library="String">
-<var>${tbl_value_updated}</var>
-<arg>${tbl_value}</arg>
-<arg>tabledata</arg>
-<arg>${element.text}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.843" endtime="20230427 15:44:17.843"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${tbl_value_updated}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.843" endtime="20230427 15:44:17.843"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.843" endtime="20230427 15:44:17.843"/>
-</kw>
-<status status="NOT RUN" starttime="20230427 15:44:17.833" endtime="20230427 15:44:17.843"/>
-</branch>
-<status status="PASS" starttime="20230427 15:44:17.833" endtime="20230427 15:44:17.843"/>
-</if>
-<status status="PASS" starttime="20230427 15:44:17.833" endtime="20230427 15:44:17.843"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="72118d3bbeb907d1d28b07ebf66708bc", element="4724a38b-9f74-4572-9bd0-c28d155a6e0c")&gt;</var>
-<if>
-<branch type="IF" condition="&quot;Weekly&quot; in &quot;${element.text}&quot;">
-<kw name="Replace String" library="String">
-<var>${tbl_value_updated}</var>
-<arg>${tbl_value}</arg>
-<arg>tabledata</arg>
-<arg>${element.text}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.869" endtime="20230427 15:44:17.871"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${tbl_value_updated}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.871" endtime="20230427 15:44:17.871"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.871" endtime="20230427 15:44:17.871"/>
-</kw>
-<status status="NOT RUN" starttime="20230427 15:44:17.851" endtime="20230427 15:44:17.871"/>
-</branch>
-<status status="PASS" starttime="20230427 15:44:17.851" endtime="20230427 15:44:17.871"/>
-</if>
-<status status="PASS" starttime="20230427 15:44:17.851" endtime="20230427 15:44:17.871"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="72118d3bbeb907d1d28b07ebf66708bc", element="af9e17bf-9510-432d-9925-46f6d1933db5")&gt;</var>
-<if>
-<branch type="IF" condition="&quot;Weekly&quot; in &quot;${element.text}&quot;">
-<kw name="Replace String" library="String">
-<var>${tbl_value_updated}</var>
-<arg>${tbl_value}</arg>
-<arg>tabledata</arg>
-<arg>${element.text}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.889" endtime="20230427 15:44:17.889"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${tbl_value_updated}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.890" endtime="20230427 15:44:17.890"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.890" endtime="20230427 15:44:17.890"/>
-</kw>
-<status status="NOT RUN" starttime="20230427 15:44:17.872" endtime="20230427 15:44:17.890"/>
-</branch>
-<status status="PASS" starttime="20230427 15:44:17.871" endtime="20230427 15:44:17.890"/>
-</if>
-<status status="PASS" starttime="20230427 15:44:17.871" endtime="20230427 15:44:17.890"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="72118d3bbeb907d1d28b07ebf66708bc", element="1d0b3976-3ed2-4e91-bd90-5255222b8479")&gt;</var>
-<if>
-<branch type="IF" condition="&quot;Weekly&quot; in &quot;${element.text}&quot;">
-<kw name="Replace String" library="String">
-<var>${tbl_value_updated}</var>
-<arg>${tbl_value}</arg>
-<arg>tabledata</arg>
-<arg>${element.text}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.908" endtime="20230427 15:44:17.908"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${tbl_value_updated}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.908" endtime="20230427 15:44:17.908"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20230427 15:44:17.908" endtime="20230427 15:44:17.908"/>
-</kw>
-<status status="NOT RUN" starttime="20230427 15:44:17.891" endtime="20230427 15:44:17.908"/>
-</branch>
-<status status="PASS" starttime="20230427 15:44:17.891" endtime="20230427 15:44:17.908"/>
-</if>
-<status status="PASS" starttime="20230427 15:44:17.891" endtime="20230427 15:44:17.908"/>
-</iter>
-<status status="PASS" starttime="20230427 15:44:11.598" endtime="20230427 15:44:17.908"/>
-</for>
-<status status="PASS" starttime="20230427 15:44:11.580" endtime="20230427 15:44:17.908"/>
-</kw>
-<kw name="close browser session" library="Generic" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230427 15:44:17.916" endtime="20230427 15:44:20.254"/>
-</kw>
-<status status="PASS" starttime="20230427 15:44:17.908" endtime="20230427 15:44:20.254"/>
-</kw>
-<tag>ALL</tag>
-<tag>DASHBOARD</tag>
-<status status="PASS" starttime="20230427 15:43:56.740" endtime="20230427 15:44:20.256"/>
-</test>
-<test id="s1-t2" name="Get Inventory ID Data from table Inventory by Status InStock or Lowstock" line="19">
-<kw name="Open Browser with passed url" library="Generic" type="SETUP">
-<arg>${URL_Param}</arg>
-<kw name="Create Webdriver" library="SeleniumLibrary">
-<arg>Chrome</arg>
-<arg>executable_path=driver/chromedriver.exe</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230427 15:44:20.263" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230427 15:44:20.259" endtime="20230427 15:44:22.632"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230427 15:44:22.635" endtime="20230427 15:44:22.754"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL_Param}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230427 15:44:22.754" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
-<status status="PASS" starttime="20230427 15:44:22.754" endtime="20230427 15:44:27.912"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:44:32.913" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:44:27.912" endtime="20230427 15:44:32.913"/>
-</kw>
-<status status="PASS" starttime="20230427 15:44:20.259" endtime="20230427 15:44:32.913"/>
-</kw>
-<kw name="Get Inventory text" library="DashboardPage">
-<kw name="Get WebElements" library="SeleniumLibrary">
-<var>${actual_invertory_list}</var>
-<arg>${inventory_id}</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<msg timestamp="20230427 15:44:32.933" level="INFO">${actual_invertory_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="64733e6e47e90ad5ddfb54212e8db778", element="9b1b67ba-9641-4c01-9bc3-dd3381069109")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
-<status status="PASS" starttime="20230427 15:44:32.917" endtime="20230427 15:44:32.933"/>
-</kw>
-<for flavor="IN">
-<var>${element}</var>
-<value>@{actual_invertory_list}</value>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="64733e6e47e90ad5ddfb54212e8db778", element="9b1b67ba-9641-4c01-9bc3-dd3381069109")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:44:32.933" endtime="20230427 15:44:32.959"/>
-</kw>
-<status status="PASS" starttime="20230427 15:44:32.933" endtime="20230427 15:44:32.959"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="64733e6e47e90ad5ddfb54212e8db778", element="54aece77-d756-43b0-8942-57f981aa638a")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:44:32.959" endtime="20230427 15:44:32.984"/>
-</kw>
-<status status="PASS" starttime="20230427 15:44:32.959" endtime="20230427 15:44:32.984"/>
-</iter>
-<iter>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="64733e6e47e90ad5ddfb54212e8db778", element="e0b71726-dc03-4d0a-9278-89a594aa038b")&gt;</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${element.text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:44:32.985" endtime="20230427 15:44:33.002"/>
-</kw>
-<status status="PASS" starttime="20230427 15:44:32.985" endtime="20230427 15:44:33.002"/>
-</iter>
-<status status="PASS" starttime="20230427 15:44:32.933" endtime="20230427 15:44:33.002"/>
-</for>
-<status status="PASS" starttime="20230427 15:44:32.913" endtime="20230427 15:44:33.002"/>
-</kw>
-<kw name="close browser session" library="Generic" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230427 15:44:33.002" endtime="20230427 15:44:35.365"/>
-</kw>
-<status status="PASS" starttime="20230427 15:44:33.002" endtime="20230427 15:44:35.365"/>
-</kw>
-<tag>ALL</tag>
-<tag>DASHBOARD</tag>
-<status status="PASS" starttime="20230427 15:44:20.259" endtime="20230427 15:44:35.365"/>
-</test>
-<test id="s1-t3" name="Frame Actions" line="23">
-<kw name="Open Browser with passed url" library="Generic" type="SETUP">
-<arg>${URL_Param}</arg>
-<kw name="Create Webdriver" library="SeleniumLibrary">
-<arg>Chrome</arg>
-<arg>executable_path=driver/chromedriver.exe</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230427 15:44:35.375" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230427 15:44:35.375" endtime="20230427 15:44:37.635"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230427 15:44:37.635" endtime="20230427 15:44:37.755"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL_Param}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230427 15:44:37.755" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
-<status status="PASS" starttime="20230427 15:44:37.755" endtime="20230427 15:44:43.603"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:44:48.603" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:44:43.603" endtime="20230427 15:44:48.603"/>
-</kw>
-<status status="PASS" starttime="20230427 15:44:35.374" endtime="20230427 15:44:48.603"/>
+<status status="PASS" starttime="20230508 14:50:34.027" endtime="20230508 14:50:48.075"/>
 </kw>
 <kw name="Navigate to" library="Generic">
 <arg>Browser</arg>
-<arg>Frame</arg>
+<arg>Window</arg>
 <kw name="Replace String" library="String">
 <var>${nav_main}</var>
 <arg>${navigation_element}</arg>
 <arg>navigation_title</arg>
 <arg>${navigation_title}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:44:48.603" level="INFO">${nav_main} = //span[text()='Browser']//preceding-sibling::i</msg>
-<status status="PASS" starttime="20230427 15:44:48.603" endtime="20230427 15:44:48.603"/>
+<msg timestamp="20230508 14:50:48.076" level="INFO">${nav_main} = //span[text()='Browser']//preceding-sibling::i</msg>
+<status status="PASS" starttime="20230508 14:50:48.076" endtime="20230508 14:50:48.076"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${nav_main}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:44:48.603" level="INFO">Clicking element '//span[text()='Browser']//preceding-sibling::i'.</msg>
-<status status="PASS" starttime="20230427 15:44:48.603" endtime="20230427 15:44:48.703"/>
+<msg timestamp="20230508 14:50:48.077" level="INFO">Clicking element '//span[text()='Browser']//preceding-sibling::i'.</msg>
+<status status="PASS" starttime="20230508 14:50:48.076" endtime="20230508 14:50:48.129"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:44:53.704" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:44:48.703" endtime="20230427 15:44:53.704"/>
+<msg timestamp="20230508 14:50:53.129" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230508 14:50:48.129" endtime="20230508 14:50:53.129"/>
 </kw>
 <kw name="Replace String" library="String">
 <var>${nav_option}</var>
@@ -396,1042 +59,135 @@
 <arg>navigation_opt</arg>
 <arg>${navigation_option}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:44:53.704" level="INFO">${nav_option} = //span[text()='Frame']//parent::a</msg>
-<status status="PASS" starttime="20230427 15:44:53.704" endtime="20230427 15:44:53.704"/>
+<msg timestamp="20230508 14:50:53.131" level="INFO">${nav_option} = //span[text()='Window']//parent::a</msg>
+<status status="PASS" starttime="20230508 14:50:53.129" endtime="20230508 14:50:53.131"/>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <arg>${nav_option}</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230427 15:44:53.704" level="INFO">Clicking link '//span[text()='Frame']//parent::a'.</msg>
-<status status="PASS" starttime="20230427 15:44:53.704" endtime="20230427 15:44:57.277"/>
+<msg timestamp="20230508 14:50:53.132" level="INFO">Clicking link '//span[text()='Window']//parent::a'.</msg>
+<status status="PASS" starttime="20230508 14:50:53.131" endtime="20230508 14:50:56.979"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:45:02.277" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:44:57.277" endtime="20230427 15:45:02.277"/>
+<msg timestamp="20230508 14:51:01.980" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230508 14:50:56.979" endtime="20230508 14:51:01.980"/>
 </kw>
-<status status="PASS" starttime="20230427 15:44:48.603" endtime="20230427 15:45:02.277"/>
+<status status="PASS" starttime="20230508 14:50:48.075" endtime="20230508 14:51:01.980"/>
 </kw>
-<kw name="Click on Frame and extract text" library="SecBrowserSubFramePage">
-<arg>Click Me (Inside frame)</arg>
-<kw name="Replace String" library="String">
-<var>${frame_connector}</var>
-<arg>${frame_selector}</arg>
-<arg>frametext</arg>
-<arg>${framename}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:45:02.281" level="INFO">${frame_connector} = //h5[contains(text(),'Click Me (Inside frame)')]//following-sibling::iframe</msg>
-<status status="PASS" starttime="20230427 15:45:02.281" endtime="20230427 15:45:02.281"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>${frame_connector}</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230427 15:45:02.281" level="INFO">Selecting frame '//h5[contains(text(),'Click Me (Inside frame)')]//following-sibling::iframe'.</msg>
-<status status="PASS" starttime="20230427 15:45:02.281" endtime="20230427 15:45:02.331"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${btn_click_frame}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230427 15:45:02.331" level="INFO">Clicking button '//button[@id="Click"]'.</msg>
-<status status="PASS" starttime="20230427 15:45:02.331" endtime="20230427 15:45:02.481"/>
+<kw name="Perform Wait for 2 new tabs to open" library="SecBrowserSubWindowPage">
+<var>${handles}</var>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_opn_with_delay}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230508 14:51:01.982" level="INFO">Clicking element '//h5[text()="Wait for 2 new tabs to open"]//following-sibling::button//span'.</msg>
+<status status="PASS" starttime="20230508 14:51:01.982" endtime="20230508 14:51:09.649"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
+<arg>10</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:45:07.482" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:45:02.481" endtime="20230427 15:45:07.482"/>
+<msg timestamp="20230508 14:51:19.649" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230508 14:51:09.649" endtime="20230508 14:51:19.649"/>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${extracted_text}</var>
-<arg>${btn_click_frame}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:45:07.520" level="INFO">${extracted_text} = Hurray! You Clicked Me.</msg>
-<status status="PASS" starttime="20230427 15:45:07.482" endtime="20230427 15:45:07.520"/>
+<kw name="Get Window Handles" library="SeleniumLibrary">
+<var>${handles}</var>
+<doc>Returns all child window handles of the selected browser as a list.</doc>
+<msg timestamp="20230508 14:51:19.661" level="INFO">${handles} = ['BBB717092E6CC57B3C4DAF53142AEB36', 'D79BB0822DBBDE8BC40CCBCFD4A1489E', '5C55902D20A8C863995CED96D0EB3B26']</msg>
+<status status="PASS" starttime="20230508 14:51:19.649" endtime="20230508 14:51:19.661"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${count}</var>
+<arg>${handles}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230508 14:51:19.661" level="INFO">Length is 3</msg>
+<msg timestamp="20230508 14:51:19.661" level="INFO">${count} = 3</msg>
+<status status="PASS" starttime="20230508 14:51:19.661" endtime="20230508 14:51:19.661"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${extracted_text}</arg>
+<arg>${count} Windows opened</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:45:07.520" endtime="20230427 15:45:07.520"/>
+<status status="PASS" starttime="20230508 14:51:19.661" endtime="20230508 14:51:19.661"/>
 </kw>
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20230427 15:45:07.520" endtime="20230427 15:45:07.535"/>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${handles}[2]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230508 14:51:19.661" endtime="20230508 14:51:19.771"/>
 </kw>
-<status status="PASS" starttime="20230427 15:45:02.281" endtime="20230427 15:45:07.535"/>
-</kw>
-<kw name="Click on Nested Frame and extract text" library="SecBrowserSubFramePage">
-<arg>Click Me (Inside Nested frame)</arg>
-<kw name="Replace String" library="String">
-<var>${frame_connector}</var>
-<arg>${frame_selector}</arg>
-<arg>frametext</arg>
-<arg>${framename}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:45:07.537" level="INFO">${frame_connector} = //h5[contains(text(),'Click Me (Inside Nested frame)')]//following-sibling::iframe</msg>
-<status status="PASS" starttime="20230427 15:45:07.537" endtime="20230427 15:45:07.537"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>${frame_connector}</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230427 15:45:07.537" level="INFO">Selecting frame '//h5[contains(text(),'Click Me (Inside Nested frame)')]//following-sibling::iframe'.</msg>
-<status status="PASS" starttime="20230427 15:45:07.537" endtime="20230427 15:45:07.584"/>
-</kw>
-<kw name="Select Frame" library="SeleniumLibrary">
-<arg>${frame2_selector}</arg>
-<doc>Sets frame identified by ``locator`` as the current frame.</doc>
-<msg timestamp="20230427 15:45:07.586" level="INFO">Selecting frame '//iframe[@id="frame2"]'.</msg>
-<status status="PASS" starttime="20230427 15:45:07.584" endtime="20230427 15:45:07.632"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${btn_click_frame}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230427 15:45:07.634" level="INFO">Clicking button '//button[@id="Click"]'.</msg>
-<status status="PASS" starttime="20230427 15:45:07.634" endtime="20230427 15:45:07.822"/>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20230508 14:51:19.771" endtime="20230508 14:51:19.836"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
+<arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:45:12.822" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:45:07.822" endtime="20230427 15:45:12.822"/>
+<msg timestamp="20230508 14:51:21.837" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230508 14:51:19.836" endtime="20230508 14:51:21.837"/>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${extracted_text}</var>
-<arg>${btn_click_frame}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:45:12.860" level="INFO">${extracted_text} = Hurray! You Clicked Me.</msg>
-<status status="PASS" starttime="20230427 15:45:12.823" endtime="20230427 15:45:12.860"/>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${handles}[1]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230508 14:51:21.837" endtime="20230508 14:51:21.887"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${extracted_text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:45:12.860" endtime="20230427 15:45:12.860"/>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20230508 14:51:21.887" endtime="20230508 14:51:21.945"/>
 </kw>
-<kw name="Unselect Frame" library="SeleniumLibrary">
-<doc>Sets the main frame as the current frame.</doc>
-<status status="PASS" starttime="20230427 15:45:12.860" endtime="20230427 15:45:12.868"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230508 14:51:23.947" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230508 14:51:21.946" endtime="20230508 14:51:23.947"/>
 </kw>
-<status status="PASS" starttime="20230427 15:45:07.536" endtime="20230427 15:45:12.868"/>
+<msg timestamp="20230508 14:51:23.947" level="INFO">${handles} = ['BBB717092E6CC57B3C4DAF53142AEB36', 'D79BB0822DBBDE8BC40CCBCFD4A1489E', '5C55902D20A8C863995CED96D0EB3B26']</msg>
+<status status="PASS" starttime="20230508 14:51:01.981" endtime="20230508 14:51:23.947"/>
+</kw>
+<kw name="Verify control is back to parent Window" library="SecBrowserSubWindowPage">
+<arg>${handles}</arg>
+<arg>https://leafground.com/window.xhtml</arg>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>${window_handle_address}[0]</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20230508 14:51:23.949" endtime="20230508 14:51:23.958"/>
+</kw>
+<kw name="Get Location" library="SeleniumLibrary">
+<var>${actual_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<msg timestamp="20230508 14:51:23.961" level="INFO">${actual_url} = https://leafground.com/window.xhtml</msg>
+<status status="PASS" starttime="20230508 14:51:23.958" endtime="20230508 14:51:23.961"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual_url}</arg>
+<arg>${expected_parent_url}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230508 14:51:23.961" endtime="20230508 14:51:23.961"/>
+</kw>
+<status status="PASS" starttime="20230508 14:51:23.948" endtime="20230508 14:51:23.961"/>
 </kw>
 <kw name="close browser session" library="Generic" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230427 15:45:12.868" endtime="20230427 15:45:15.259"/>
+<status status="PASS" starttime="20230508 14:51:23.961" endtime="20230508 14:51:26.173"/>
 </kw>
-<status status="PASS" starttime="20230427 15:45:12.868" endtime="20230427 15:45:15.259"/>
+<status status="PASS" starttime="20230508 14:51:23.961" endtime="20230508 14:51:26.173"/>
 </kw>
 <tag>ALL</tag>
-<tag>FRAME</tag>
-<status status="PASS" starttime="20230427 15:44:35.365" endtime="20230427 15:45:15.259"/>
-</test>
-<test id="s1-t4" name="Alert Handling Alert ( Simple Dialog )" line="29">
-<kw name="Open Browser with passed url" library="Generic" type="SETUP">
-<arg>${URL_Param}</arg>
-<kw name="Create Webdriver" library="SeleniumLibrary">
-<arg>Chrome</arg>
-<arg>executable_path=driver/chromedriver.exe</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230427 15:45:15.268" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230427 15:45:15.268" endtime="20230427 15:45:17.704"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230427 15:45:17.704" endtime="20230427 15:45:17.839"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL_Param}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230427 15:45:17.839" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
-<status status="PASS" starttime="20230427 15:45:17.839" endtime="20230427 15:45:24.382"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:45:29.382" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:45:24.382" endtime="20230427 15:45:29.382"/>
-</kw>
-<status status="PASS" starttime="20230427 15:45:15.259" endtime="20230427 15:45:29.382"/>
-</kw>
-<kw name="Navigate to" library="Generic">
-<arg>Browser</arg>
-<arg>Alert</arg>
-<kw name="Replace String" library="String">
-<var>${nav_main}</var>
-<arg>${navigation_element}</arg>
-<arg>navigation_title</arg>
-<arg>${navigation_title}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:45:29.383" level="INFO">${nav_main} = //span[text()='Browser']//preceding-sibling::i</msg>
-<status status="PASS" starttime="20230427 15:45:29.383" endtime="20230427 15:45:29.383"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${nav_main}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:45:29.383" level="INFO">Clicking element '//span[text()='Browser']//preceding-sibling::i'.</msg>
-<status status="PASS" starttime="20230427 15:45:29.383" endtime="20230427 15:45:29.480"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:45:34.481" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:45:29.480" endtime="20230427 15:45:34.481"/>
-</kw>
-<kw name="Replace String" library="String">
-<var>${nav_option}</var>
-<arg>${navigation_opt}</arg>
-<arg>navigation_opt</arg>
-<arg>${navigation_option}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:45:34.481" level="INFO">${nav_option} = //span[text()='Alert']//parent::a</msg>
-<status status="PASS" starttime="20230427 15:45:34.481" endtime="20230427 15:45:34.481"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${nav_option}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230427 15:45:34.481" level="INFO">Clicking link '//span[text()='Alert']//parent::a'.</msg>
-<status status="PASS" starttime="20230427 15:45:34.481" endtime="20230427 15:45:39.424"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:45:44.425" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:45:39.424" endtime="20230427 15:45:44.425"/>
-</kw>
-<status status="PASS" starttime="20230427 15:45:29.383" endtime="20230427 15:45:44.425"/>
-</kw>
-<kw name="Perform Click on Alert Box" library="SecBrowserSubAlertPage">
-<arg>Alert (Simple Dialog)</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${dialog_button}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:45:44.428" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Alert (Simple Dialog)']//following-sibling::button</msg>
-<status status="PASS" starttime="20230427 15:45:44.428" endtime="20230427 15:45:44.428"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${alert_element_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230427 15:45:44.428" level="INFO">Clicking button '//h5[normalize-space(text())='Alert (Simple Dialog)']//following-sibling::button'.</msg>
-<status status="PASS" starttime="20230427 15:45:44.428" endtime="20230427 15:45:44.540"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:45:47.540" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:45:44.540" endtime="20230427 15:45:47.541"/>
-</kw>
-<status status="PASS" starttime="20230427 15:45:44.428" endtime="20230427 15:45:47.541"/>
-</kw>
-<kw name="Handle Alert Simple Dialog" library="SecBrowserSubAlertPage">
-<var>${message}</var>
-<kw name="Handle Alert" library="SeleniumLibrary">
-<var>${alert_message}</var>
-<arg>action=ACCEPT</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<msg timestamp="20230427 15:45:47.545" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<msg timestamp="20230427 15:45:47.554" level="INFO">${alert_message} = I am simple alert.</msg>
-<status status="PASS" starttime="20230427 15:45:47.541" endtime="20230427 15:45:47.554"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:45:50.555" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:45:47.555" endtime="20230427 15:45:50.555"/>
-</kw>
-<msg timestamp="20230427 15:45:50.555" level="INFO">${message} = I am simple alert.</msg>
-<status status="PASS" starttime="20230427 15:45:47.541" endtime="20230427 15:45:50.555"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${message} - Message Displayed</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:45:50.556" endtime="20230427 15:45:50.556"/>
-</kw>
-<kw name="Get Message After Clicking on Alert" library="SecBrowserSubAlertPage">
-<var>${message}</var>
-<arg>Alert (Simple Dialog)</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${diaglog_succ_msg}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:45:50.556" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Alert (Prompt Dialog)']//following-sibling::span[@id="simple_result" or @id="result" or @id="confirm_result"]</msg>
-<status status="PASS" starttime="20230427 15:45:50.556" endtime="20230427 15:45:50.556"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${success_msg}</var>
-<arg>${alert_element_btn}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:45:50.596" level="INFO">${success_msg} = </msg>
-<status status="PASS" starttime="20230427 15:45:50.556" endtime="20230427 15:45:50.596"/>
-</kw>
-<msg timestamp="20230427 15:45:50.597" level="INFO">${message} = </msg>
-<status status="PASS" starttime="20230427 15:45:50.556" endtime="20230427 15:45:50.597"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${message} - Success Message</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:45:50.597" endtime="20230427 15:45:50.597"/>
-</kw>
-<kw name="close browser session" library="Generic" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230427 15:45:50.597" endtime="20230427 15:45:52.996"/>
-</kw>
-<status status="PASS" starttime="20230427 15:45:50.597" endtime="20230427 15:45:52.996"/>
-</kw>
-<tag>ALERT</tag>
-<tag>ALL</tag>
-<status status="PASS" starttime="20230427 15:45:15.259" endtime="20230427 15:45:52.996"/>
-</test>
-<test id="s1-t5" name="Alert Handling Alert (Confirm Dialog)" line="38">
-<kw name="Open Browser with passed url" library="Generic" type="SETUP">
-<arg>${URL_Param}</arg>
-<kw name="Create Webdriver" library="SeleniumLibrary">
-<arg>Chrome</arg>
-<arg>executable_path=driver/chromedriver.exe</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230427 15:45:52.996" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230427 15:45:52.996" endtime="20230427 15:45:55.338"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230427 15:45:55.338" endtime="20230427 15:45:55.464"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL_Param}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230427 15:45:55.464" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
-<status status="PASS" starttime="20230427 15:45:55.464" endtime="20230427 15:46:01.353"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:46:06.353" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:46:01.353" endtime="20230427 15:46:06.353"/>
-</kw>
-<status status="PASS" starttime="20230427 15:45:52.996" endtime="20230427 15:46:06.353"/>
-</kw>
-<kw name="Navigate to" library="Generic">
-<arg>Browser</arg>
-<arg>Alert</arg>
-<kw name="Replace String" library="String">
-<var>${nav_main}</var>
-<arg>${navigation_element}</arg>
-<arg>navigation_title</arg>
-<arg>${navigation_title}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:46:06.358" level="INFO">${nav_main} = //span[text()='Browser']//preceding-sibling::i</msg>
-<status status="PASS" starttime="20230427 15:46:06.357" endtime="20230427 15:46:06.358"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${nav_main}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:46:06.359" level="INFO">Clicking element '//span[text()='Browser']//preceding-sibling::i'.</msg>
-<status status="PASS" starttime="20230427 15:46:06.358" endtime="20230427 15:46:06.444"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:46:11.445" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:46:06.444" endtime="20230427 15:46:11.445"/>
-</kw>
-<kw name="Replace String" library="String">
-<var>${nav_option}</var>
-<arg>${navigation_opt}</arg>
-<arg>navigation_opt</arg>
-<arg>${navigation_option}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:46:11.446" level="INFO">${nav_option} = //span[text()='Alert']//parent::a</msg>
-<status status="PASS" starttime="20230427 15:46:11.446" endtime="20230427 15:46:11.446"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${nav_option}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230427 15:46:11.447" level="INFO">Clicking link '//span[text()='Alert']//parent::a'.</msg>
-<status status="PASS" starttime="20230427 15:46:11.446" endtime="20230427 15:46:14.490"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:46:19.491" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:46:14.490" endtime="20230427 15:46:19.491"/>
-</kw>
-<status status="PASS" starttime="20230427 15:46:06.353" endtime="20230427 15:46:19.491"/>
-</kw>
-<kw name="Perform Click on Alert Box" library="SecBrowserSubAlertPage">
-<arg>Alert (Confirm Dialog)</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${dialog_button}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:46:19.493" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Alert (Confirm Dialog)']//following-sibling::button</msg>
-<status status="PASS" starttime="20230427 15:46:19.493" endtime="20230427 15:46:19.493"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${alert_element_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230427 15:46:19.493" level="INFO">Clicking button '//h5[normalize-space(text())='Alert (Confirm Dialog)']//following-sibling::button'.</msg>
-<status status="PASS" starttime="20230427 15:46:19.493" endtime="20230427 15:46:19.591"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:46:22.591" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:46:19.591" endtime="20230427 15:46:22.591"/>
-</kw>
-<status status="PASS" starttime="20230427 15:46:19.493" endtime="20230427 15:46:22.591"/>
-</kw>
-<kw name="Handle Alert (Confirm Dialog) For Ok" library="SecBrowserSubAlertPage">
-<var>${message}</var>
-<kw name="Handle Alert" library="SeleniumLibrary">
-<var>${alert_message}</var>
-<arg>action=ACCEPT</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<msg timestamp="20230427 15:46:22.591" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<msg timestamp="20230427 15:46:22.603" level="INFO">${alert_message} = Did you call me?</msg>
-<status status="PASS" starttime="20230427 15:46:22.591" endtime="20230427 15:46:22.603"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:46:25.603" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:46:22.603" endtime="20230427 15:46:25.603"/>
-</kw>
-<msg timestamp="20230427 15:46:25.603" level="INFO">${message} = Did you call me?</msg>
-<status status="PASS" starttime="20230427 15:46:22.591" endtime="20230427 15:46:25.603"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${message} - Message Displayed</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:46:25.607" endtime="20230427 15:46:25.610"/>
-</kw>
-<kw name="Get Message After Clicking on Alert" library="SecBrowserSubAlertPage">
-<var>${message}</var>
-<arg>Alert (Confirm Dialog)</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${diaglog_succ_msg}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:46:25.611" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Alert (Prompt Dialog)']//following-sibling::span[@id="simple_result" or @id="result" or @id="confirm_result"]</msg>
-<status status="PASS" starttime="20230427 15:46:25.611" endtime="20230427 15:46:25.611"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${success_msg}</var>
-<arg>${alert_element_btn}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:46:25.645" level="INFO">${success_msg} = </msg>
-<status status="PASS" starttime="20230427 15:46:25.611" endtime="20230427 15:46:25.645"/>
-</kw>
-<msg timestamp="20230427 15:46:25.645" level="INFO">${message} = </msg>
-<status status="PASS" starttime="20230427 15:46:25.611" endtime="20230427 15:46:25.645"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${message} - Success Message</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:46:25.645" endtime="20230427 15:46:25.645"/>
-</kw>
-<kw name="Perform Click on Alert Box" library="SecBrowserSubAlertPage">
-<arg>Alert (Confirm Dialog)</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${dialog_button}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:46:25.650" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Alert (Confirm Dialog)']//following-sibling::button</msg>
-<status status="PASS" starttime="20230427 15:46:25.650" endtime="20230427 15:46:25.650"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${alert_element_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230427 15:46:25.650" level="INFO">Clicking button '//h5[normalize-space(text())='Alert (Confirm Dialog)']//following-sibling::button'.</msg>
-<status status="PASS" starttime="20230427 15:46:25.650" endtime="20230427 15:46:25.740"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:46:28.740" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:46:25.740" endtime="20230427 15:46:28.740"/>
-</kw>
-<status status="PASS" starttime="20230427 15:46:25.649" endtime="20230427 15:46:28.740"/>
-</kw>
-<kw name="Handle Alert (Confirm Dialog) For Cancle" library="SecBrowserSubAlertPage">
-<var>${message}</var>
-<kw name="Handle Alert" library="SeleniumLibrary">
-<var>${alert_message}</var>
-<arg>action=DISMISS</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<msg timestamp="20230427 15:46:28.740" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<msg timestamp="20230427 15:46:28.752" level="INFO">${alert_message} = Did you call me?</msg>
-<status status="PASS" starttime="20230427 15:46:28.740" endtime="20230427 15:46:28.752"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:46:31.754" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:46:28.752" endtime="20230427 15:46:31.754"/>
-</kw>
-<msg timestamp="20230427 15:46:31.755" level="INFO">${message} = Did you call me?</msg>
-<status status="PASS" starttime="20230427 15:46:28.740" endtime="20230427 15:46:31.755"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${message} - Message Displayed</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:46:31.755" endtime="20230427 15:46:31.755"/>
-</kw>
-<kw name="Get Message After Clicking on Alert" library="SecBrowserSubAlertPage">
-<var>${message}</var>
-<arg>Alert (Confirm Dialog)</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${diaglog_succ_msg}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:46:31.755" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Alert (Prompt Dialog)']//following-sibling::span[@id="simple_result" or @id="result" or @id="confirm_result"]</msg>
-<status status="PASS" starttime="20230427 15:46:31.755" endtime="20230427 15:46:31.755"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${success_msg}</var>
-<arg>${alert_element_btn}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:46:31.790" level="INFO">${success_msg} = </msg>
-<status status="PASS" starttime="20230427 15:46:31.755" endtime="20230427 15:46:31.790"/>
-</kw>
-<msg timestamp="20230427 15:46:31.791" level="INFO">${message} = </msg>
-<status status="PASS" starttime="20230427 15:46:31.755" endtime="20230427 15:46:31.791"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${message} - Cancle Success Message</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:46:31.791" endtime="20230427 15:46:31.791"/>
-</kw>
-<kw name="close browser session" library="Generic" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230427 15:46:31.791" endtime="20230427 15:46:34.211"/>
-</kw>
-<status status="PASS" starttime="20230427 15:46:31.791" endtime="20230427 15:46:34.211"/>
-</kw>
-<tag>ALERT</tag>
-<tag>ALL</tag>
-<status status="PASS" starttime="20230427 15:45:52.996" endtime="20230427 15:46:34.213"/>
-</test>
-<test id="s1-t6" name="Alert Handling Sweet Alert (Simple Dialog)" line="54">
-<kw name="Open Browser with passed url" library="Generic" type="SETUP">
-<arg>${URL_Param}</arg>
-<kw name="Create Webdriver" library="SeleniumLibrary">
-<arg>Chrome</arg>
-<arg>executable_path=driver/chromedriver.exe</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230427 15:46:34.213" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230427 15:46:34.213" endtime="20230427 15:46:36.590"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230427 15:46:36.590" endtime="20230427 15:46:36.706"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL_Param}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230427 15:46:36.708" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
-<status status="PASS" starttime="20230427 15:46:36.706" endtime="20230427 15:46:42.909"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:46:47.916" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:46:42.916" endtime="20230427 15:46:47.916"/>
-</kw>
-<status status="PASS" starttime="20230427 15:46:34.213" endtime="20230427 15:46:47.916"/>
-</kw>
-<kw name="Navigate to" library="Generic">
-<arg>Browser</arg>
-<arg>Alert</arg>
-<kw name="Replace String" library="String">
-<var>${nav_main}</var>
-<arg>${navigation_element}</arg>
-<arg>navigation_title</arg>
-<arg>${navigation_title}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:46:47.916" level="INFO">${nav_main} = //span[text()='Browser']//preceding-sibling::i</msg>
-<status status="PASS" starttime="20230427 15:46:47.916" endtime="20230427 15:46:47.916"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${nav_main}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:46:47.916" level="INFO">Clicking element '//span[text()='Browser']//preceding-sibling::i'.</msg>
-<status status="PASS" starttime="20230427 15:46:47.916" endtime="20230427 15:46:47.993"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:46:52.993" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:46:47.993" endtime="20230427 15:46:52.993"/>
-</kw>
-<kw name="Replace String" library="String">
-<var>${nav_option}</var>
-<arg>${navigation_opt}</arg>
-<arg>navigation_opt</arg>
-<arg>${navigation_option}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:46:52.993" level="INFO">${nav_option} = //span[text()='Alert']//parent::a</msg>
-<status status="PASS" starttime="20230427 15:46:52.993" endtime="20230427 15:46:52.993"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${nav_option}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230427 15:46:52.995" level="INFO">Clicking link '//span[text()='Alert']//parent::a'.</msg>
-<status status="PASS" starttime="20230427 15:46:52.993" endtime="20230427 15:46:56.511"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:47:01.511" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:46:56.511" endtime="20230427 15:47:01.511"/>
-</kw>
-<status status="PASS" starttime="20230427 15:46:47.916" endtime="20230427 15:47:01.511"/>
-</kw>
-<kw name="Perform Click on Alert Box" library="SecBrowserSubAlertPage">
-<arg>Sweet Alert (Simple Dialog)</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${dialog_button}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:47:01.517" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Sweet Alert (Simple Dialog)']//following-sibling::button</msg>
-<status status="PASS" starttime="20230427 15:47:01.511" endtime="20230427 15:47:01.517"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${alert_element_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230427 15:47:01.518" level="INFO">Clicking button '//h5[normalize-space(text())='Sweet Alert (Simple Dialog)']//following-sibling::button'.</msg>
-<status status="PASS" starttime="20230427 15:47:01.517" endtime="20230427 15:47:01.624"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:47:04.624" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:47:01.624" endtime="20230427 15:47:04.624"/>
-</kw>
-<status status="PASS" starttime="20230427 15:47:01.511" endtime="20230427 15:47:04.624"/>
-</kw>
-<kw name="Handle Sweet Alert (Simple Dialog) For Ok" library="SecBrowserSubAlertPage">
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${sweet_dialog_msg}</arg>
-<arg>message=Message is not displayed as expected</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230427 15:47:04.666" level="INFO">Element '//div[@role='dialog']//p[normalize-space(text())='You have clicked and open a dialog that can be inspectable.']' is displayed.</msg>
-<status status="PASS" starttime="20230427 15:47:04.626" endtime="20230427 15:47:04.666"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_dialog_dismiss}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:47:04.666" level="INFO">Clicking element '//div[@role='dialog']//button//span[text()='Dismiss']'.</msg>
-<status status="PASS" starttime="20230427 15:47:04.666" endtime="20230427 15:47:04.731"/>
-</kw>
-<status status="PASS" starttime="20230427 15:47:04.626" endtime="20230427 15:47:04.731"/>
-</kw>
-<kw name="close browser session" library="Generic" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230427 15:47:04.731" endtime="20230427 15:47:07.128"/>
-</kw>
-<status status="PASS" starttime="20230427 15:47:04.731" endtime="20230427 15:47:07.129"/>
-</kw>
-<tag>ALERT</tag>
-<tag>ALL</tag>
-<status status="PASS" starttime="20230427 15:46:34.213" endtime="20230427 15:47:07.131"/>
-</test>
-<test id="s1-t7" name="Alert Handling Sweet Modal Dialog" line="60">
-<kw name="Open Browser with passed url" library="Generic" type="SETUP">
-<arg>${URL_Param}</arg>
-<kw name="Create Webdriver" library="SeleniumLibrary">
-<arg>Chrome</arg>
-<arg>executable_path=driver/chromedriver.exe</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230427 15:47:07.137" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230427 15:47:07.137" endtime="20230427 15:47:09.478"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230427 15:47:09.478" endtime="20230427 15:47:09.601"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL_Param}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230427 15:47:09.601" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
-<status status="PASS" starttime="20230427 15:47:09.601" endtime="20230427 15:47:15.138"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:47:20.139" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:47:15.138" endtime="20230427 15:47:20.139"/>
-</kw>
-<status status="PASS" starttime="20230427 15:47:07.137" endtime="20230427 15:47:20.139"/>
-</kw>
-<kw name="Navigate to" library="Generic">
-<arg>Browser</arg>
-<arg>Alert</arg>
-<kw name="Replace String" library="String">
-<var>${nav_main}</var>
-<arg>${navigation_element}</arg>
-<arg>navigation_title</arg>
-<arg>${navigation_title}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:47:20.141" level="INFO">${nav_main} = //span[text()='Browser']//preceding-sibling::i</msg>
-<status status="PASS" starttime="20230427 15:47:20.141" endtime="20230427 15:47:20.141"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${nav_main}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:47:20.141" level="INFO">Clicking element '//span[text()='Browser']//preceding-sibling::i'.</msg>
-<status status="PASS" starttime="20230427 15:47:20.141" endtime="20230427 15:47:20.224"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:47:25.224" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:47:20.224" endtime="20230427 15:47:25.224"/>
-</kw>
-<kw name="Replace String" library="String">
-<var>${nav_option}</var>
-<arg>${navigation_opt}</arg>
-<arg>navigation_opt</arg>
-<arg>${navigation_option}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:47:25.224" level="INFO">${nav_option} = //span[text()='Alert']//parent::a</msg>
-<status status="PASS" starttime="20230427 15:47:25.224" endtime="20230427 15:47:25.224"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${nav_option}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230427 15:47:25.224" level="INFO">Clicking link '//span[text()='Alert']//parent::a'.</msg>
-<status status="PASS" starttime="20230427 15:47:25.224" endtime="20230427 15:47:28.301"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:47:33.302" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:47:28.301" endtime="20230427 15:47:33.302"/>
-</kw>
-<status status="PASS" starttime="20230427 15:47:20.141" endtime="20230427 15:47:33.302"/>
-</kw>
-<kw name="Perform Click on Alert Box" library="SecBrowserSubAlertPage">
-<arg>Sweet Modal Dialog</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${dialog_button}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:47:33.302" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Sweet Modal Dialog']//following-sibling::button</msg>
-<status status="PASS" starttime="20230427 15:47:33.302" endtime="20230427 15:47:33.302"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${alert_element_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230427 15:47:33.307" level="INFO">Clicking button '//h5[normalize-space(text())='Sweet Modal Dialog']//following-sibling::button'.</msg>
-<status status="PASS" starttime="20230427 15:47:33.307" endtime="20230427 15:47:33.420"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:47:36.421" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:47:33.420" endtime="20230427 15:47:36.421"/>
-</kw>
-<status status="PASS" starttime="20230427 15:47:33.302" endtime="20230427 15:47:36.422"/>
-</kw>
-<kw name="Handle Sweet Modal Dialog For Ok" library="SecBrowserSubAlertPage">
-<kw name="Element Should Be Visible" library="SeleniumLibrary">
-<arg>${sweet_modal_dialog_msg}</arg>
-<arg>message=Message is not displayed as expected</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<msg timestamp="20230427 15:47:36.461" level="INFO">Element '//div[@role='dialog']//p[normalize-space(text())='Unless you close this, you cannot interact with other element. But am inspectable !']' is displayed.</msg>
-<status status="PASS" starttime="20230427 15:47:36.424" endtime="20230427 15:47:36.461"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_click_dialog_close}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:47:36.462" level="INFO">Clicking element '//div[@role="dialog"]//span[text()="Modal Dialog (Sweet Alert)"]//following-sibling::a[@role="button"]'.</msg>
-<status status="PASS" starttime="20230427 15:47:36.461" endtime="20230427 15:47:36.545"/>
-</kw>
-<status status="PASS" starttime="20230427 15:47:36.424" endtime="20230427 15:47:36.545"/>
-</kw>
-<kw name="close browser session" library="Generic" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230427 15:47:36.546" endtime="20230427 15:47:38.972"/>
-</kw>
-<status status="PASS" starttime="20230427 15:47:36.546" endtime="20230427 15:47:38.972"/>
-</kw>
-<tag>ALERT</tag>
-<tag>ALL</tag>
-<status status="PASS" starttime="20230427 15:47:07.134" endtime="20230427 15:47:38.972"/>
-</test>
-<test id="s1-t8" name="Alert Handling Alert (Prompt Dialog)" line="66">
-<kw name="Open Browser with passed url" library="Generic" type="SETUP">
-<arg>${URL_Param}</arg>
-<kw name="Create Webdriver" library="SeleniumLibrary">
-<arg>Chrome</arg>
-<arg>executable_path=driver/chromedriver.exe</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230427 15:47:38.980" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230427 15:47:38.980" endtime="20230427 15:47:41.349"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230427 15:47:41.349" endtime="20230427 15:47:41.490"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>${URL_Param}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230427 15:47:41.490" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
-<status status="PASS" starttime="20230427 15:47:41.490" endtime="20230427 15:47:47.899"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:47:52.899" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:47:47.899" endtime="20230427 15:47:52.899"/>
-</kw>
-<status status="PASS" starttime="20230427 15:47:38.980" endtime="20230427 15:47:52.899"/>
-</kw>
-<kw name="Navigate to" library="Generic">
-<arg>Browser</arg>
-<arg>Alert</arg>
-<kw name="Replace String" library="String">
-<var>${nav_main}</var>
-<arg>${navigation_element}</arg>
-<arg>navigation_title</arg>
-<arg>${navigation_title}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:47:52.899" level="INFO">${nav_main} = //span[text()='Browser']//preceding-sibling::i</msg>
-<status status="PASS" starttime="20230427 15:47:52.899" endtime="20230427 15:47:52.899"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${nav_main}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:47:52.899" level="INFO">Clicking element '//span[text()='Browser']//preceding-sibling::i'.</msg>
-<status status="PASS" starttime="20230427 15:47:52.899" endtime="20230427 15:47:52.975"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:47:57.975" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:47:52.975" endtime="20230427 15:47:57.976"/>
-</kw>
-<kw name="Replace String" library="String">
-<var>${nav_option}</var>
-<arg>${navigation_opt}</arg>
-<arg>navigation_opt</arg>
-<arg>${navigation_option}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:47:57.976" level="INFO">${nav_option} = //span[text()='Alert']//parent::a</msg>
-<status status="PASS" starttime="20230427 15:47:57.976" endtime="20230427 15:47:57.976"/>
-</kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>${nav_option}</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230427 15:47:57.976" level="INFO">Clicking link '//span[text()='Alert']//parent::a'.</msg>
-<status status="PASS" starttime="20230427 15:47:57.976" endtime="20230427 15:48:00.845"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>5</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:48:05.845" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230427 15:48:00.845" endtime="20230427 15:48:05.845"/>
-</kw>
-<status status="PASS" starttime="20230427 15:47:52.899" endtime="20230427 15:48:05.845"/>
-</kw>
-<kw name="Perform Click on Alert Box" library="SecBrowserSubAlertPage">
-<arg>Alert (Prompt Dialog)</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${dialog_button}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:48:05.850" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Alert (Prompt Dialog)']//following-sibling::button</msg>
-<status status="PASS" starttime="20230427 15:48:05.845" endtime="20230427 15:48:05.850"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${alert_element_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230427 15:48:05.851" level="INFO">Clicking button '//h5[normalize-space(text())='Alert (Prompt Dialog)']//following-sibling::button'.</msg>
-<status status="PASS" starttime="20230427 15:48:05.850" endtime="20230427 15:48:05.952"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:48:08.953" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:48:05.952" endtime="20230427 15:48:08.953"/>
-</kw>
-<status status="PASS" starttime="20230427 15:48:05.845" endtime="20230427 15:48:08.953"/>
-</kw>
-<kw name="Handle Alert (Prompt Dialog) Input text for Ok" library="SecBrowserSubAlertPage">
-<var>${message}</var>
-<arg>Delroy</arg>
-<kw name="Input Text Into Alert" library="SeleniumLibrary">
-<var>${alert_message}</var>
-<arg>${textpassed}</arg>
-<arg>action=ACCEPT</arg>
-<doc>Types the given ``text`` into an input field in an alert.</doc>
-<msg timestamp="20230427 15:48:08.967" level="INFO">${alert_message} = None</msg>
-<status status="PASS" starttime="20230427 15:48:08.954" endtime="20230427 15:48:08.967"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:48:11.968" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:48:08.967" endtime="20230427 15:48:11.968"/>
-</kw>
-<msg timestamp="20230427 15:48:11.968" level="INFO">${message} = None</msg>
-<status status="PASS" starttime="20230427 15:48:08.954" endtime="20230427 15:48:11.968"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${message} - Message Displayed</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:48:11.969" endtime="20230427 15:48:11.969"/>
-</kw>
-<kw name="Get Message After Clicking on Alert" library="SecBrowserSubAlertPage">
-<var>${message}</var>
-<arg>Alert (Prompt Dialog)</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${diaglog_succ_msg}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:48:11.969" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Alert (Prompt Dialog)']//following-sibling::span[@id="simple_result" or @id="result" or @id="confirm_result"]</msg>
-<status status="PASS" starttime="20230427 15:48:11.969" endtime="20230427 15:48:11.969"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${success_msg}</var>
-<arg>${alert_element_btn}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:48:12.008" level="INFO">${success_msg} = User entered name as: Delroy</msg>
-<status status="PASS" starttime="20230427 15:48:11.969" endtime="20230427 15:48:12.008"/>
-</kw>
-<msg timestamp="20230427 15:48:12.008" level="INFO">${message} = User entered name as: Delroy</msg>
-<status status="PASS" starttime="20230427 15:48:11.969" endtime="20230427 15:48:12.008"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${message} - Success Message</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:48:12.008" endtime="20230427 15:48:12.008"/>
-</kw>
-<kw name="Perform Click on Alert Box" library="SecBrowserSubAlertPage">
-<arg>Alert (Prompt Dialog)</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${dialog_button}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:48:12.008" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Alert (Prompt Dialog)']//following-sibling::button</msg>
-<status status="PASS" starttime="20230427 15:48:12.008" endtime="20230427 15:48:12.008"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>${alert_element_btn}</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230427 15:48:12.008" level="INFO">Clicking button '//h5[normalize-space(text())='Alert (Prompt Dialog)']//following-sibling::button'.</msg>
-<status status="PASS" starttime="20230427 15:48:12.008" endtime="20230427 15:48:12.103"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:48:15.105" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:48:12.103" endtime="20230427 15:48:15.105"/>
-</kw>
-<status status="PASS" starttime="20230427 15:48:12.008" endtime="20230427 15:48:15.105"/>
-</kw>
-<kw name="Handle Alert (Prompt Dialog) For Cancle" library="SecBrowserSubAlertPage">
-<var>${message}</var>
-<kw name="Handle Alert" library="SeleniumLibrary">
-<var>${alert_message}</var>
-<arg>action=DISMISS</arg>
-<doc>Handles the current alert and returns its message.</doc>
-<msg timestamp="20230427 15:48:15.106" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<msg timestamp="20230427 15:48:15.119" level="INFO">${alert_message} = Type your name and click OK</msg>
-<status status="PASS" starttime="20230427 15:48:15.106" endtime="20230427 15:48:15.119"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>3</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230427 15:48:18.120" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20230427 15:48:15.119" endtime="20230427 15:48:18.120"/>
-</kw>
-<msg timestamp="20230427 15:48:18.121" level="INFO">${message} = Type your name and click OK</msg>
-<status status="PASS" starttime="20230427 15:48:15.106" endtime="20230427 15:48:18.121"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${message} - Message Displayed</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:48:18.121" endtime="20230427 15:48:18.126"/>
-</kw>
-<kw name="Get Message After Clicking on Alert" library="SecBrowserSubAlertPage">
-<var>${message}</var>
-<arg>Alert (Prompt Dialog)</arg>
-<kw name="Replace String" library="String">
-<var>${alert_element_btn}</var>
-<arg>${diaglog_succ_msg}</arg>
-<arg>alertboxtitle</arg>
-<arg>${alertname}</arg>
-<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230427 15:48:18.128" level="INFO">${alert_element_btn} = //h5[normalize-space(text())='Alert (Prompt Dialog)']//following-sibling::span[@id="simple_result" or @id="result" or @id="confirm_result"]</msg>
-<status status="PASS" starttime="20230427 15:48:18.128" endtime="20230427 15:48:18.128"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${success_msg}</var>
-<arg>${alert_element_btn}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230427 15:48:18.151" level="INFO">${success_msg} = User cancelled the prompt.</msg>
-<status status="PASS" starttime="20230427 15:48:18.128" endtime="20230427 15:48:18.151"/>
-</kw>
-<msg timestamp="20230427 15:48:18.151" level="INFO">${message} = User cancelled the prompt.</msg>
-<status status="PASS" starttime="20230427 15:48:18.126" endtime="20230427 15:48:18.151"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${message} - Cancle Success Message</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230427 15:48:18.151" endtime="20230427 15:48:18.151"/>
-</kw>
-<kw name="close browser session" library="Generic" type="TEARDOWN">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230427 15:48:18.151" endtime="20230427 15:48:20.555"/>
-</kw>
-<status status="PASS" starttime="20230427 15:48:18.151" endtime="20230427 15:48:20.555"/>
-</kw>
-<tag>ALERT</tag>
-<tag>ALL</tag>
-<status status="PASS" starttime="20230427 15:47:38.979" endtime="20230427 15:48:20.555"/>
+<tag>WINDOW_HANDLE</tag>
+<status status="PASS" starttime="20230508 14:50:34.026" endtime="20230508 14:51:26.173"/>
 </test>
 <doc>Perform Test on Dashboard</doc>
-<status status="PASS" starttime="20230427 15:43:56.509" endtime="20230427 15:48:20.563"/>
+<status status="PASS" starttime="20230508 14:50:33.816" endtime="20230508 14:51:26.175"/>
 </suite>
 <statistics>
 <total>
-<stat pass="8" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="5" fail="0" skip="0">ALERT</stat>
-<stat pass="8" fail="0" skip="0">ALL</stat>
-<stat pass="2" fail="0" skip="0">DASHBOARD</stat>
-<stat pass="1" fail="0" skip="0">FRAME</stat>
+<stat pass="1" fail="0" skip="0">ALL</stat>
+<stat pass="1" fail="0" skip="0">WINDOW_HANDLE</stat>
 </tag>
 <suite>
-<stat pass="8" fail="0" skip="0" id="s1" name="testDemo10">testDemo10</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="testDemo10">testDemo10</stat>
 </suite>
 </statistics>
 <errors>
