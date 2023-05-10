@@ -5,6 +5,7 @@ Resource    ../PO/DashboardPage.robot
 Resource    ../PO/SecBrowserSubFramePage.robot
 Resource    ../PO/SecBrowserSubAlertPage.robot
 Resource    ../PO/SecBrowserSubWindowPage.robot
+Resource    ../PO/secBrowserSubDragDropPage.robot
 Test Setup    Open Browser With passed Url    ${URL_Param}
 Test Teardown   close browser session
 Library    String

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    FrameActions
+Documentation    WindowHandling
 Library     SeleniumLibrary
 *** Variables ***
 ${btn_clk_opn_conf}     //h5[text()="Click and Confirm new Window Opens"]//following-sibling::button//span
