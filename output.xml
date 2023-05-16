@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230508 14:50:33.814" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230516 12:43:44.623" rpa="false" schemaversion="3">
 <suite id="s1" name="testDemo10" source="C:\Users\delolive\Desktop\PycharmProject\robotFramework\tests\testDemo10.robot">
-<test id="s1-t1" name="Handle Wait for 2 new tabs to open" line="101">
+<test id="s1-t1" name="Perform Resize Image Activity using Drag by offset" line="133">
 <kw name="Open Browser with passed url" library="Generic" type="SETUP">
 <arg>${URL_Param}</arg>
 <kw name="Create Webdriver" library="SeleniumLibrary">
 <arg>Chrome</arg>
 <arg>executable_path=driver/chromedriver.exe</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230508 14:50:34.027" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230508 14:50:34.027" endtime="20230508 14:50:36.755"/>
+<msg timestamp="20230516 12:43:44.849" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20230516 12:43:44.849" endtime="20230516 12:43:47.209"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230508 14:50:36.755" endtime="20230508 14:50:36.871"/>
+<status status="PASS" starttime="20230516 12:43:47.209" endtime="20230516 12:43:47.328"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${URL_Param}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230508 14:50:36.871" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
-<status status="PASS" starttime="20230508 14:50:36.871" endtime="20230508 14:50:43.074"/>
+<msg timestamp="20230516 12:43:47.328" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
+<status status="PASS" starttime="20230516 12:43:47.328" endtime="20230516 12:43:50.944"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230508 14:50:48.075" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230508 14:50:43.074" endtime="20230508 14:50:48.075"/>
+<msg timestamp="20230516 12:43:55.945" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230516 12:43:50.944" endtime="20230516 12:43:55.945"/>
 </kw>
-<status status="PASS" starttime="20230508 14:50:34.027" endtime="20230508 14:50:48.075"/>
+<status status="PASS" starttime="20230516 12:43:44.847" endtime="20230516 12:43:55.946"/>
 </kw>
 <kw name="Navigate to" library="Generic">
 <arg>Browser</arg>
-<arg>Window</arg>
+<arg>Drag</arg>
 <kw name="Replace String" library="String">
 <var>${nav_main}</var>
 <arg>${navigation_element}</arg>
 <arg>navigation_title</arg>
 <arg>${navigation_title}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230508 14:50:48.076" level="INFO">${nav_main} = //span[text()='Browser']//preceding-sibling::i</msg>
-<status status="PASS" starttime="20230508 14:50:48.076" endtime="20230508 14:50:48.076"/>
+<msg timestamp="20230516 12:43:55.949" level="INFO">${nav_main} = //span[text()='Browser']//preceding-sibling::i</msg>
+<status status="PASS" starttime="20230516 12:43:55.949" endtime="20230516 12:43:55.949"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${nav_main}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230508 14:50:48.077" level="INFO">Clicking element '//span[text()='Browser']//preceding-sibling::i'.</msg>
-<status status="PASS" starttime="20230508 14:50:48.076" endtime="20230508 14:50:48.129"/>
+<msg timestamp="20230516 12:43:55.950" level="INFO">Clicking element '//span[text()='Browser']//preceding-sibling::i'.</msg>
+<status status="PASS" starttime="20230516 12:43:55.949" endtime="20230516 12:43:56.026"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230508 14:50:53.129" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230508 14:50:48.129" endtime="20230508 14:50:53.129"/>
+<msg timestamp="20230516 12:44:01.027" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230516 12:43:56.027" endtime="20230516 12:44:01.027"/>
 </kw>
 <kw name="Replace String" library="String">
 <var>${nav_option}</var>
@@ -59,124 +59,52 @@
 <arg>navigation_opt</arg>
 <arg>${navigation_option}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230508 14:50:53.131" level="INFO">${nav_option} = //span[text()='Window']//parent::a</msg>
-<status status="PASS" starttime="20230508 14:50:53.129" endtime="20230508 14:50:53.131"/>
+<msg timestamp="20230516 12:44:01.028" level="INFO">${nav_option} = //span[text()='Drag']//parent::a</msg>
+<status status="PASS" starttime="20230516 12:44:01.027" endtime="20230516 12:44:01.028"/>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <arg>${nav_option}</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230508 14:50:53.132" level="INFO">Clicking link '//span[text()='Window']//parent::a'.</msg>
-<status status="PASS" starttime="20230508 14:50:53.131" endtime="20230508 14:50:56.979"/>
+<msg timestamp="20230516 12:44:01.029" level="INFO">Clicking link '//span[text()='Drag']//parent::a'.</msg>
+<status status="PASS" starttime="20230516 12:44:01.028" endtime="20230516 12:44:03.636"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230508 14:51:01.980" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230508 14:50:56.979" endtime="20230508 14:51:01.980"/>
+<msg timestamp="20230516 12:44:08.636" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230516 12:44:03.636" endtime="20230516 12:44:08.636"/>
 </kw>
-<status status="PASS" starttime="20230508 14:50:48.075" endtime="20230508 14:51:01.980"/>
+<status status="PASS" starttime="20230516 12:43:55.949" endtime="20230516 12:44:08.636"/>
 </kw>
-<kw name="Perform Wait for 2 new tabs to open" library="SecBrowserSubWindowPage">
-<var>${handles}</var>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${btn_opn_with_delay}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230508 14:51:01.982" level="INFO">Clicking element '//h5[text()="Wait for 2 new tabs to open"]//following-sibling::button//span'.</msg>
-<status status="PASS" starttime="20230508 14:51:01.982" endtime="20230508 14:51:09.649"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>10</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230508 14:51:19.649" level="INFO">Slept 10 seconds</msg>
-<status status="PASS" starttime="20230508 14:51:09.649" endtime="20230508 14:51:19.649"/>
-</kw>
-<kw name="Get Window Handles" library="SeleniumLibrary">
-<var>${handles}</var>
-<doc>Returns all child window handles of the selected browser as a list.</doc>
-<msg timestamp="20230508 14:51:19.661" level="INFO">${handles} = ['BBB717092E6CC57B3C4DAF53142AEB36', 'D79BB0822DBBDE8BC40CCBCFD4A1489E', '5C55902D20A8C863995CED96D0EB3B26']</msg>
-<status status="PASS" starttime="20230508 14:51:19.649" endtime="20230508 14:51:19.661"/>
-</kw>
-<kw name="Get Length" library="BuiltIn">
-<var>${count}</var>
-<arg>${handles}</arg>
-<doc>Returns and logs the length of the given item as an integer.</doc>
-<msg timestamp="20230508 14:51:19.661" level="INFO">Length is 3</msg>
-<msg timestamp="20230508 14:51:19.661" level="INFO">${count} = 3</msg>
-<status status="PASS" starttime="20230508 14:51:19.661" endtime="20230508 14:51:19.661"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${count} Windows opened</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230508 14:51:19.661" endtime="20230508 14:51:19.661"/>
-</kw>
-<kw name="Switch Window" library="SeleniumLibrary">
-<arg>${handles}[2]</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="PASS" starttime="20230508 14:51:19.661" endtime="20230508 14:51:19.771"/>
-</kw>
-<kw name="Close Window" library="SeleniumLibrary">
-<doc>Closes currently opened and selected browser window/tab.</doc>
-<status status="PASS" starttime="20230508 14:51:19.771" endtime="20230508 14:51:19.836"/>
+<kw name="Perform Resize Image Activity" library="secBrowserSubDragDropPage">
+<kw name="Drag And Drop By Offset" library="SeleniumLibrary">
+<arg>${resize_image}</arg>
+<arg>300</arg>
+<arg>0</arg>
+<doc>Drags the element identified with ``locator`` by ``xoffset/yoffset``.</doc>
+<status status="PASS" starttime="20230516 12:44:08.640" endtime="20230516 12:44:09.214"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
+<arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230508 14:51:21.837" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230508 14:51:19.836" endtime="20230508 14:51:21.837"/>
+<msg timestamp="20230516 12:44:14.215" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230516 12:44:09.214" endtime="20230516 12:44:14.215"/>
 </kw>
-<kw name="Switch Window" library="SeleniumLibrary">
-<arg>${handles}[1]</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="PASS" starttime="20230508 14:51:21.837" endtime="20230508 14:51:21.887"/>
-</kw>
-<kw name="Close Window" library="SeleniumLibrary">
-<doc>Closes currently opened and selected browser window/tab.</doc>
-<status status="PASS" starttime="20230508 14:51:21.887" endtime="20230508 14:51:21.945"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230508 14:51:23.947" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230508 14:51:21.946" endtime="20230508 14:51:23.947"/>
-</kw>
-<msg timestamp="20230508 14:51:23.947" level="INFO">${handles} = ['BBB717092E6CC57B3C4DAF53142AEB36', 'D79BB0822DBBDE8BC40CCBCFD4A1489E', '5C55902D20A8C863995CED96D0EB3B26']</msg>
-<status status="PASS" starttime="20230508 14:51:01.981" endtime="20230508 14:51:23.947"/>
-</kw>
-<kw name="Verify control is back to parent Window" library="SecBrowserSubWindowPage">
-<arg>${handles}</arg>
-<arg>https://leafground.com/window.xhtml</arg>
-<kw name="Switch Window" library="SeleniumLibrary">
-<arg>${window_handle_address}[0]</arg>
-<doc>Switches to browser window matching ``locator``.</doc>
-<status status="PASS" starttime="20230508 14:51:23.949" endtime="20230508 14:51:23.958"/>
-</kw>
-<kw name="Get Location" library="SeleniumLibrary">
-<var>${actual_url}</var>
-<doc>Returns the current browser window URL.</doc>
-<msg timestamp="20230508 14:51:23.961" level="INFO">${actual_url} = https://leafground.com/window.xhtml</msg>
-<status status="PASS" starttime="20230508 14:51:23.958" endtime="20230508 14:51:23.961"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${actual_url}</arg>
-<arg>${expected_parent_url}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230508 14:51:23.961" endtime="20230508 14:51:23.961"/>
-</kw>
-<status status="PASS" starttime="20230508 14:51:23.948" endtime="20230508 14:51:23.961"/>
+<status status="PASS" starttime="20230516 12:44:08.640" endtime="20230516 12:44:14.215"/>
 </kw>
 <kw name="close browser session" library="Generic" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230508 14:51:23.961" endtime="20230508 14:51:26.173"/>
+<status status="PASS" starttime="20230516 12:44:14.217" endtime="20230516 12:44:16.456"/>
 </kw>
-<status status="PASS" starttime="20230508 14:51:23.961" endtime="20230508 14:51:26.173"/>
+<status status="PASS" starttime="20230516 12:44:14.217" endtime="20230516 12:44:16.456"/>
 </kw>
 <tag>ALL</tag>
-<tag>WINDOW_HANDLE</tag>
-<status status="PASS" starttime="20230508 14:50:34.026" endtime="20230508 14:51:26.173"/>
+<tag>DRAGANDDROP</tag>
+<status status="PASS" starttime="20230516 12:43:44.846" endtime="20230516 12:44:16.457"/>
 </test>
 <doc>Perform Test on Dashboard</doc>
-<status status="PASS" starttime="20230508 14:50:33.816" endtime="20230508 14:51:26.175"/>
+<status status="PASS" starttime="20230516 12:43:44.624" endtime="20230516 12:44:16.458"/>
 </suite>
 <statistics>
 <total>
@@ -184,7 +112,7 @@
 </total>
 <tag>
 <stat pass="1" fail="0" skip="0">ALL</stat>
-<stat pass="1" fail="0" skip="0">WINDOW_HANDLE</stat>
+<stat pass="1" fail="0" skip="0">DRAGANDDROP</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="testDemo10">testDemo10</stat>
