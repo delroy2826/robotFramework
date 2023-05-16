@@ -104,3 +104,33 @@ Handle Wait for 2 new tabs to open
     Navigate to     Browser     Window
     ${handles}=     Perform Wait for 2 new tabs to open
     Verify control is back to parent Window     ${handles}      https://leafground.com/window.xhtml
+
+Perform Draggable Activity using Drag by offset
+    [Tags]    DRAGANDDROP    ALL
+    Navigate To    Browser      Drag
+    Perform Drag by offset activity     200     0
+
+Perform Droppable Activity using Drag and Drop
+    [Tags]    DRAGANDDROP    ALL
+    Navigate To    Browser      Drag
+    Perform Drag and Drop Activity
+
+Perform Draggable Columns Activity using Drag and Drop
+    [Tags]    DRAGANDDROP    ALL
+    Navigate To    Browser      Drag
+    Perform Draggable Columns Activity
+
+Perform Draggable Rows Activity using Drag and Drop
+    [Tags]    DRAGANDDROP    ALL
+    Navigate To    Browser      Drag
+    Perform Draggable Rows Activity     Bamboo Watch    Blue Band
+
+Perform Range Slider Activity using Drag by offset
+    [Tags]    DRAGANDDROP    ALL
+    Navigate To    Browser      Drag
+    Perform Range Slider Activity
+
+Perform Resize Image Activity using Drag by offset
+    [Tags]    DRAGANDDROP    ALL
+    Navigate To    Browser      Drag
+    Perform Resize Image Activity
