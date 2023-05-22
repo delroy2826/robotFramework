@@ -6,6 +6,7 @@ Resource    ../PO/SecBrowserSubFramePage.robot
 Resource    ../PO/SecBrowserSubAlertPage.robot
 Resource    ../PO/SecBrowserSubWindowPage.robot
 Resource    ../PO/secBrowserSubDragDropPage.robot
+Resource    ../PO/secElementSubTextBoxPage.robot
 Test Setup    Open Browser With passed Url    ${URL_Param}
 Test Teardown   close browser session
 Library    String
@@ -134,3 +135,45 @@ Perform Resize Image Activity using Drag by offset
     [Tags]    DRAGANDDROP    ALL
     Navigate To    Browser      Drag
     Perform Resize Image Activity
+
+Perform Input Operation on text box
+    [Tags]    TEXTBOX   ALL
+    Navigate To    Element      Text Box
+    Enter name in the Type your name field      Delroy
+    Sleep    2
+
+Perform Append Country to this City on input field
+    [Tags]    TEXTBOX   ALL
+    Navigate To    Element      Text Box
+    Append text in the input field      Delroy
+    Sleep    2
+
+Verify Text box is disabled
+    [Tags]    TEXTBOX   ALL
+    Navigate To    Element      Text Box
+    Check if the text box is disabled
+    Sleep    2
+
+Perform clear field operation on Input field
+    [Tags]    TEXTBOX   ALL
+    Navigate To    Element      Text Box
+    Clear the input field and enter text    Field Cleared
+    Sleep    2
+
+Perform extraction of text from input field
+    [Tags]    TEXTBOX   ALL
+    Navigate To    Element      Text Box
+    Extract text from field
+    Sleep    2
+
+Perform Keyboard action on an input field
+    [Tags]    TEXTBOX   ALL
+    Navigate To    Element      Text Box
+    Enter email address Press tab and enter tell me about yourself      delroyoliveira@gmail.com    I am Automation Tester
+    Sleep    2
+
+Perform Enter Activity on the input field
+    [Tags]    TEXTBOX   ALL
+    Navigate To    Element      Text Box
+    Press Enter on the input field and verify error msg is displayed
+    Sleep    5
