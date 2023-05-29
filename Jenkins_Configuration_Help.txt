@@ -1,0 +1,117 @@
+# Jenkins configuration Backup
+# 1) ThinBackup Plugin
+
+# Jenkins Setup
+# 1) Download Jenkins https://www.jenkins.io/download/   War file
+# 2) open cmd where the war file is located and run following command
+# Syntax: java -jar jenkin.war -httpPort=<portnumber or 9090>
+#         java -jar jenkins.war -httpPort=9090
+# 3) Save below details got from above output
+# 362ea5b854564fc699194b4efaf51c14
+# C:\Users\delolive\.jenkins\secrets\initialAdminPassword
+# 4) Open Browser and enter
+# localhost:8080
+# and paste the above credential
+# 5) Click on Install Suggested Plugin
+# 6) Create first admin user
+# username : delolive
+# pw: Q1w2e3r4t5
+#
+# a) New Item->Enter item name-> Freestyle Project->ok
+# b) build configuration
+# Configure
+#         -> General -> Advanced -> Use custom WorkSpace->Directory
+#                 Example: Path of the Project Folder
+#                 C:\Users\delolive\Desktop\PycharmProject\RobotFrameWork
+#         -> General -> This Project is Parameterized
+#                 1)Add Parameter-> Choice Parameter
+#                         Name:
+#                                 browser_name
+#                         Choices:
+#                                 Chrome
+#                                 Firefox
+#                 2)Add Parameter-> Choice Parameter
+#                         Name:
+#                                 TestExecute
+#                         Choices:
+#                                 .
+#                                 testDemo1.robot
+#                                 testDemo2.robot
+#                                 testDemo3.robot
+#                                 testDemo4.robot
+#                                 testDemo5.robot
+#                                 testDemo6.robot
+#                                 testDemo6UsingTemplate.robot
+#                                 testDemo7.robot
+#                                 testDemo8.robot
+#                 3)Add Parameter-> Choice Parameter
+#                         Name:
+#                                 testtags
+#                         Choices:
+#                                 ALL
+#                                 SMOKE
+#                                 SANITY
+#                                 REGRESSION
+#                                 SIMPLE
+#
+#         -> Build Steps -> Add Build Steps -> Execute Windows batch command
+#                 call venv\Scripts\activate.bat
+#                 cd tests
+#                 robot .
+#         ->If using parameterized project Build Steps -> Add Build Steps -> Execute Windows batch command
+#                 call venv\Scripts\activate.bat
+#                 cd tests
+#                 robot --variable browser_name:%browser_name% %TestExecute%
+#         -> Save
+
+# Jenkins Project Configuration for CICD
+# a) New Item->Enter item name-> Freestyle Project->ok
+# b) build configuration
+#Configure
+#         -> General -> GitHub project
+#             Project url = https://github.com/delroy2826/robotFramework.git/
+#         -> General -> This Project is Parameterized
+#                 1)Add Parameter-> Choice Parameter
+#                         Name:
+#                                 browser_name
+#                         Choices:
+#                                 Chrome
+#                                 Firefox
+#                 2)Add Parameter-> Choice Parameter
+#                         Name:
+#                                 TestExecute
+#                         Choices:
+#                                 .
+#                                 testDemo1.robot
+#                                 testDemo2.robot
+#                                 testDemo3.robot
+#                                 testDemo4.robot
+#                                 testDemo5.robot
+#                                 testDemo6.robot
+#                                 testDemo6UsingTemplate.robot
+#                                 testDemo7.robot
+#                                 testDemo8.robot
+#                 3)Add Parameter-> Choice Parameter
+#                         Name:
+#                                 testtags
+#                         Choices:
+#                                 ALL
+#                                 SMOKE
+#                                 SANITY
+#                                 REGRESSION
+#                                 SIMPLE
+#           -> Source Code Management -> Git
+#                 Repository URL = https://github.com/delroy2826/robotFramework.git/
+#                 Credentials = Select credential from drop down
+#           -> Branches to build
+#                 Branch Specifier (blank for 'any') = */master
+#           -> Build Steps -> Add build step -> Execute Windows batch command
+#                 python.exe -m pip install --upgrade pip
+#                 python.exe -m pip install install virtualenv
+#                 virtualenv venv
+#                 call venv\Scripts\activate.bat
+#                 copy requirements.txt venv
+#                 python.exe -m pip install -r venv\requirements.txt
+#                 chcp 65001
+#                 cd tests
+#                 robot --variable browser_name:%browser_name% --include %testtags% %TestExecute%
