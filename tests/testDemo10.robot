@@ -5,8 +5,9 @@ Resource    ../PO/DashboardPage.robot
 Resource    ../PO/SecBrowserSubFramePage.robot
 Resource    ../PO/SecBrowserSubAlertPage.robot
 Resource    ../PO/SecBrowserSubWindowPage.robot
-Resource    ../PO/secBrowserSubDragDropPage.robot
-Resource    ../PO/secElementSubTextBoxPage.robot
+Resource    ../PO/SecBrowserSubDragDropPage.robot
+Resource    ../PO/SecElementSubTextBoxPage.robot
+Resource    ../PO/SecElementSubButtonPage.robot
 Test Setup    Open Browser With passed Url    ${URL_Param}
 Test Teardown   close browser session
 Library    String
@@ -177,3 +178,33 @@ Perform Enter Activity on the input field
     Navigate To    Element      Text Box
     Press Enter on the input field and verify error msg is displayed
     Sleep    5
+
+Verify if the button is disabled
+    [Tags]    BUTTON    ALL
+    Navigate To    Element      Button
+    Verify if the button is disabled
+    Sleep    2
+
+Extract location of the submit button
+    [Tags]    BUTTON    ALL
+    Navigate To    Element      Button
+    Find the position of the Submit button
+    Sleep    2
+
+Extract Color of the save button
+    [Tags]    BUTTON    ALL
+    Navigate To    Element      Button
+    Find the Save button color
+    Sleep    2
+
+Get Heigh and Width of the element
+    [Tags]    BUTTON    ALL
+    Navigate To    Element      Button
+    Find the height and width of this button
+    Sleep    2
+
+Verify if color change while mouse hover on the element
+    [Tags]    BUTTON    ALL
+    Navigate To    Element      Button
+    Mouse over and confirm the color changed
+    Sleep    2
