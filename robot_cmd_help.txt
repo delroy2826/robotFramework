@@ -1,0 +1,10 @@
+# robot .  #Executes all robot files in sequence
+# pabot .  #Executed all robot files in parallel
+# pabot --testlevelsplit <path to test suite file> #Executes all test cases in test file parallely
+# robot -t  <"tase case name"> <parth to test suite file or .> # Executes Specific test case
+# robot -t < "partialname*"> <parth to test suite file or .> # Executes Specific test case
+# robot --include <tagname> <.> #Runs Specific tagged test case
+# robot -i <tagname1> -i <tagname2> <testfilename or .> #Executes tagname1 and tagname2
+# robot -e <tagname1> -i <tagname2> <testfilename or .> #Excludes tagname1 and includes tagname2
+# robot --rerunfailed output.xml . #Reruns failed test cases
+# robot --variable <browser_name:Chrome> <testfile name or .> #Executes the browser passed as Arguement
