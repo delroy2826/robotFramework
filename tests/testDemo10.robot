@@ -197,7 +197,7 @@ Extract Color of the save button
     Find the Save button color
     Sleep    2
 
-Get Heigh and Width of the element
+Get height and Width of the element
     [Tags]    BUTTON    ALL
     Navigate To    Element      Button
     Find the height and width of this button
