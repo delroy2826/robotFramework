@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230529 13:36:10.222" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.11.1 on win32)" generated="20230727 14:31:43.076" rpa="false" schemaversion="3">
 <suite id="s1" name="testDemo10" source="C:\Users\delolive\Desktop\PycharmProject\robotFramework\tests\testDemo10.robot">
-<test id="s1-t1" name="Verify if color change while mouse hover on the element" line="206">
+<test id="s1-t1" name="Verify drop down selection on UI Automation Tool" line="221">
 <kw name="Open Browser with passed url" library="Generic" type="SETUP">
 <arg>${URL_Param}</arg>
 <kw name="Create Webdriver" library="SeleniumLibrary">
 <arg>Chrome</arg>
 <arg>executable_path=driver/chromedriver.exe</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230529 13:36:10.562" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230529 13:36:10.561" endtime="20230529 13:36:13.846"/>
+<msg timestamp="20230727 14:31:43.314" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20230727 14:31:43.314" endtime="20230727 14:31:45.705"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230529 13:36:13.847" endtime="20230529 13:36:13.975"/>
+<status status="PASS" starttime="20230727 14:31:45.705" endtime="20230727 14:31:45.840"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${URL_Param}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230529 13:36:13.975" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
-<status status="PASS" starttime="20230529 13:36:13.975" endtime="20230529 13:36:17.491"/>
+<msg timestamp="20230727 14:31:45.840" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
+<status status="PASS" starttime="20230727 14:31:45.840" endtime="20230727 14:31:51.273"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230529 13:36:22.492" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230529 13:36:17.491" endtime="20230529 13:36:22.492"/>
+<msg timestamp="20230727 14:31:56.273" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:31:51.273" endtime="20230727 14:31:56.273"/>
 </kw>
-<status status="PASS" starttime="20230529 13:36:10.561" endtime="20230529 13:36:22.492"/>
+<status status="PASS" starttime="20230727 14:31:43.314" endtime="20230727 14:31:56.273"/>
 </kw>
 <kw name="Navigate to" library="Generic">
 <arg>Element</arg>
-<arg>Button</arg>
+<arg>Dropdown</arg>
 <kw name="Replace String" library="String">
 <var>${nav_main}</var>
 <arg>${navigation_element}</arg>
 <arg>navigation_title</arg>
 <arg>${navigation_title}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230529 13:36:22.494" level="INFO">${nav_main} = //span[text()='Element']//preceding-sibling::i</msg>
-<status status="PASS" starttime="20230529 13:36:22.494" endtime="20230529 13:36:22.494"/>
+<msg timestamp="20230727 14:31:56.276" level="INFO">${nav_main} = //span[text()='Element']//preceding-sibling::i</msg>
+<status status="PASS" starttime="20230727 14:31:56.276" endtime="20230727 14:31:56.276"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${nav_main}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230529 13:36:22.496" level="INFO">Clicking element '//span[text()='Element']//preceding-sibling::i'.</msg>
-<status status="PASS" starttime="20230529 13:36:22.494" endtime="20230529 13:36:22.573"/>
+<msg timestamp="20230727 14:31:56.276" level="INFO">Clicking element '//span[text()='Element']//preceding-sibling::i'.</msg>
+<status status="PASS" starttime="20230727 14:31:56.276" endtime="20230727 14:31:56.334"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230529 13:36:27.575" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230529 13:36:22.573" endtime="20230529 13:36:27.575"/>
+<msg timestamp="20230727 14:32:01.335" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:31:56.335" endtime="20230727 14:32:01.336"/>
 </kw>
 <kw name="Replace String" library="String">
 <var>${nav_option}</var>
@@ -59,108 +59,708 @@
 <arg>navigation_opt</arg>
 <arg>${navigation_option}</arg>
 <doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
-<msg timestamp="20230529 13:36:27.575" level="INFO">${nav_option} = //span[text()='Button']//parent::a</msg>
-<status status="PASS" starttime="20230529 13:36:27.575" endtime="20230529 13:36:27.575"/>
+<msg timestamp="20230727 14:32:01.336" level="INFO">${nav_option} = //span[text()='Dropdown']//parent::a</msg>
+<status status="PASS" starttime="20230727 14:32:01.336" endtime="20230727 14:32:01.336"/>
 </kw>
 <kw name="Click Link" library="SeleniumLibrary">
 <arg>${nav_option}</arg>
 <doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230529 13:36:27.576" level="INFO">Clicking link '//span[text()='Button']//parent::a'.</msg>
-<status status="PASS" starttime="20230529 13:36:27.576" endtime="20230529 13:36:29.481"/>
+<msg timestamp="20230727 14:32:01.336" level="INFO">Clicking link '//span[text()='Dropdown']//parent::a'.</msg>
+<status status="PASS" starttime="20230727 14:32:01.336" endtime="20230727 14:32:04.780"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230529 13:36:34.481" level="INFO">Slept 5 seconds</msg>
-<status status="PASS" starttime="20230529 13:36:29.481" endtime="20230529 13:36:34.481"/>
+<msg timestamp="20230727 14:32:09.780" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:32:04.780" endtime="20230727 14:32:09.780"/>
 </kw>
-<status status="PASS" starttime="20230529 13:36:22.493" endtime="20230529 13:36:34.481"/>
+<status status="PASS" starttime="20230727 14:31:56.276" endtime="20230727 14:32:09.780"/>
 </kw>
-<kw name="Mouse over and confirm the color changed" library="SecElementSubButtonPage">
-<kw name="Get Color Element Rgba" library="SeleniumAdvFunc">
-<var>${color_desc1}</var>
-<arg>${col_chg_Success_btn}</arg>
-<msg timestamp="20230529 13:36:34.512" level="INFO">${color_desc1} = #689f3838</msg>
-<status status="PASS" starttime="20230529 13:36:34.482" endtime="20230529 13:36:34.512"/>
+<kw name="Get all values of the selected list" library="Generic">
+<var>${actual_opt_lst}</var>
+<arg>${drp_down_ui_auto}</arg>
+<kw name="Get List Items" library="SeleniumLibrary">
+<var>${list_of_options}</var>
+<arg>${locator_for_select}</arg>
+<doc>Returns all labels or values of selection list ``locator``.</doc>
+<msg timestamp="20230727 14:32:09.870" level="INFO">${list_of_options} = ['Select Tool', 'Selenium', 'Playwright', 'Puppeteer', 'Cypress']</msg>
+<status status="PASS" starttime="20230727 14:32:09.780" endtime="20230727 14:32:09.870"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>Color Hex Code ${color_desc1}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230529 13:36:34.512" endtime="20230529 13:36:34.512"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230529 13:36:35.512" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230529 13:36:34.512" endtime="20230529 13:36:35.512"/>
-</kw>
-<kw name="Mouse Over" library="SeleniumLibrary">
-<arg>${col_chg_Success_btn}</arg>
-<doc>Simulates hovering the mouse over the element ``locator``.</doc>
-<msg timestamp="20230529 13:36:35.512" level="INFO">Simulating Mouse Over on element '//h5[text()='Mouse over and confirm the color changed']//following-sibling::button'.</msg>
-<status status="PASS" starttime="20230529 13:36:35.512" endtime="20230529 13:36:35.794"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230529 13:36:36.795" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20230529 13:36:35.794" endtime="20230529 13:36:36.795"/>
-</kw>
-<kw name="Get Color Element Rgba" library="SeleniumAdvFunc">
-<var>${color_desc2}</var>
-<arg>${col_chg_Success_btn}</arg>
-<msg timestamp="20230529 13:36:36.818" level="INFO">${color_desc2} = #5e8f3232</msg>
-<status status="PASS" starttime="20230529 13:36:36.795" endtime="20230529 13:36:36.818"/>
+<msg timestamp="20230727 14:32:09.870" level="INFO">${actual_opt_lst} = ['Select Tool', 'Selenium', 'Playwright', 'Puppeteer', 'Cypress']</msg>
+<status status="PASS" starttime="20230727 14:32:09.780" endtime="20230727 14:32:09.870"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>Color Hex Code ${color_desc2}</arg>
+<arg>${actual_opt_lst}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20230529 13:36:36.819" endtime="20230529 13:36:36.819"/>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</kw>
+<kw name="Verify if all expected options are displayed" library="SecElementSubDropDownPage">
+<arg>${actual_opt_lst}</arg>
+<arg>${expected_tool_opt_lst}</arg>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{expected}</value>
+<iter>
+<var name="${item}">Select Tool</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${item}</arg>
+<arg>msg=${item} is not present in ${expected}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</iter>
+<iter>
+<var name="${item}">Selenium</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${item}</arg>
+<arg>msg=${item} is not present in ${expected}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</iter>
+<iter>
+<var name="${item}">Playwright</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${item}</arg>
+<arg>msg=${item} is not present in ${expected}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</iter>
+<iter>
+<var name="${item}">Puppeteer</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${item}</arg>
+<arg>msg=${item} is not present in ${expected}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</iter>
+<iter>
+<var name="${item}">Cypress</var>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual}</arg>
+<arg>${item}</arg>
+<arg>msg=${item} is not present in ${expected}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</iter>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</for>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.870"/>
+</kw>
+<kw name="Select the value from the drop down" library="Generic">
+<arg>${drp_down_ui_auto}</arg>
+<arg>Selenium</arg>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${locator_for_select}</arg>
+<arg>${value}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20230727 14:32:09.870" level="INFO">Selecting options from selection list '//h5[contains(text(),'UI Automation tool')]//parent::div[@class='card']//select[@class='ui-selectonemenu']' by label Selenium.</msg>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.941"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:09.870" endtime="20230727 14:32:09.941"/>
+</kw>
+<kw name="Verify expected option selected" library="Generic">
+<var>${expected_opt}</var>
+<arg>${drp_down_ui_auto}</arg>
+<kw name="Get Selected List Value" library="SeleniumLibrary">
+<var>${actual_value}</var>
+<arg>${locator_for_select}</arg>
+<doc>Returns the value of selected option from selection list ``locator``.</doc>
+<msg timestamp="20230727 14:32:09.988" level="INFO">${actual_value} = Selenium</msg>
+<status status="PASS" starttime="20230727 14:32:09.943" endtime="20230727 14:32:09.988"/>
+</kw>
+<msg timestamp="20230727 14:32:09.988" level="INFO">${expected_opt} = Selenium</msg>
+<status status="PASS" starttime="20230727 14:32:09.942" endtime="20230727 14:32:09.988"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${expected_opt}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230727 14:32:09.989" endtime="20230727 14:32:09.990"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${expected_opt}</arg>
+<arg>Selenium</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230727 14:32:09.990" endtime="20230727 14:32:09.990"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>2</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230529 13:36:38.820" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230529 13:36:36.820" endtime="20230529 13:36:38.820"/>
-</kw>
-<kw name="Should Not Be Equal As Strings" library="BuiltIn">
-<arg>${color_desc1}</arg>
-<arg>${color_desc2}</arg>
-<doc>Fails if objects are equal after converting them to strings.</doc>
-<status status="PASS" starttime="20230529 13:36:38.820" endtime="20230529 13:36:38.820"/>
-</kw>
-<status status="PASS" starttime="20230529 13:36:34.482" endtime="20230529 13:36:38.820"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20230529 13:36:40.822" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20230529 13:36:38.821" endtime="20230529 13:36:40.822"/>
+<msg timestamp="20230727 14:32:11.990" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230727 14:32:09.990" endtime="20230727 14:32:11.990"/>
 </kw>
 <kw name="close browser session" library="Generic" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230529 13:36:40.822" endtime="20230529 13:36:43.144"/>
+<status status="PASS" starttime="20230727 14:32:11.990" endtime="20230727 14:32:14.246"/>
 </kw>
-<status status="PASS" starttime="20230529 13:36:40.822" endtime="20230529 13:36:43.144"/>
+<status status="PASS" starttime="20230727 14:32:11.990" endtime="20230727 14:32:14.246"/>
 </kw>
 <tag>ALL</tag>
-<tag>BUTTON</tag>
-<status status="PASS" starttime="20230529 13:36:10.560" endtime="20230529 13:36:43.144"/>
+<tag>DROP_DOWN</tag>
+<status status="PASS" starttime="20230727 14:31:43.314" endtime="20230727 14:32:14.246"/>
+</test>
+<test id="s1-t2" name="Verify Cities belonging to prefered country is loaded" line="233">
+<kw name="Open Browser with passed url" library="Generic" type="SETUP">
+<arg>${URL_Param}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=driver/chromedriver.exe</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20230727 14:32:14.254" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20230727 14:32:14.254" endtime="20230727 14:32:16.294"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230727 14:32:16.294" endtime="20230727 14:32:16.411"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL_Param}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230727 14:32:16.411" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
+<status status="PASS" starttime="20230727 14:32:16.411" endtime="20230727 14:32:21.015"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:32:26.016" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:32:21.015" endtime="20230727 14:32:26.016"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:14.246" endtime="20230727 14:32:26.017"/>
+</kw>
+<kw name="Navigate to" library="Generic">
+<arg>Element</arg>
+<arg>Dropdown</arg>
+<kw name="Replace String" library="String">
+<var>${nav_main}</var>
+<arg>${navigation_element}</arg>
+<arg>navigation_title</arg>
+<arg>${navigation_title}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:32:26.019" level="INFO">${nav_main} = //span[text()='Element']//preceding-sibling::i</msg>
+<status status="PASS" starttime="20230727 14:32:26.019" endtime="20230727 14:32:26.019"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nav_main}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230727 14:32:26.019" level="INFO">Clicking element '//span[text()='Element']//preceding-sibling::i'.</msg>
+<status status="PASS" starttime="20230727 14:32:26.019" endtime="20230727 14:32:26.080"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:32:31.082" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:32:26.082" endtime="20230727 14:32:31.082"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${nav_option}</var>
+<arg>${navigation_opt}</arg>
+<arg>navigation_opt</arg>
+<arg>${navigation_option}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:32:31.082" level="INFO">${nav_option} = //span[text()='Dropdown']//parent::a</msg>
+<status status="PASS" starttime="20230727 14:32:31.082" endtime="20230727 14:32:31.082"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${nav_option}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230727 14:32:31.082" level="INFO">Clicking link '//span[text()='Dropdown']//parent::a'.</msg>
+<status status="PASS" starttime="20230727 14:32:31.082" endtime="20230727 14:32:33.881"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:32:38.882" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:32:33.881" endtime="20230727 14:32:38.882"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:26.019" endtime="20230727 14:32:38.882"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:32:40.883" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230727 14:32:38.882" endtime="20230727 14:32:40.883"/>
+</kw>
+<kw name="Select The Country From The Drop Down" library="SecElementSubDropDownPage">
+<arg>${input_dwn_pref_country}</arg>
+<arg>Germany</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230727 14:32:40.887" level="INFO">Clicking element '//h5[contains(text(),'preferred country')]//parent::div[@class='card']//label[text()='Select Country']'.</msg>
+<status status="PASS" starttime="20230727 14:32:40.885" endtime="20230727 14:32:40.939"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${slt_country}</var>
+<arg>${select_country}</arg>
+<arg>countryname</arg>
+<arg>${country}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:32:40.939" level="INFO">${slt_country} = //li[text()='Germany']</msg>
+<status status="PASS" starttime="20230727 14:32:40.939" endtime="20230727 14:32:40.939"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${slt_country}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230727 14:32:40.939" level="INFO">Clicking element '//li[text()='Germany']'.</msg>
+<status status="PASS" starttime="20230727 14:32:40.939" endtime="20230727 14:32:41.004"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:40.885" endtime="20230727 14:32:41.004"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:32:43.005" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230727 14:32:41.004" endtime="20230727 14:32:43.005"/>
+</kw>
+<kw name="Verify if Expected Cities loaded" library="SecElementSubDropDownPage">
+<arg>${input_dwn_city}</arg>
+<arg>${expected_city_opt_lst}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230727 14:32:43.005" level="INFO">Clicking element '//h5[contains(text(),'Confirm Cities')]//parent::div[@class='card']//label[text()='Select City']'.</msg>
+<status status="PASS" starttime="20230727 14:32:43.005" endtime="20230727 14:32:43.057"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:32:45.059" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230727 14:32:43.057" endtime="20230727 14:32:45.059"/>
+</kw>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{expected}</value>
+<iter>
+<var name="${item}">Select City</var>
+<kw name="Replace String" library="String">
+<var>${city_value}</var>
+<arg>${lst_city}</arg>
+<arg>cityname</arg>
+<arg>${item}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:32:45.059" level="INFO">${city_value} = //li[text()='Select City']</msg>
+<status status="PASS" starttime="20230727 14:32:45.059" endtime="20230727 14:32:45.059"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${city_value}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230727 14:32:45.093" level="INFO">Element '//li[text()='Select City']' is displayed.</msg>
+<status status="PASS" starttime="20230727 14:32:45.059" endtime="20230727 14:32:45.093"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:45.059" endtime="20230727 14:32:45.093"/>
+</iter>
+<iter>
+<var name="${item}">Berlin</var>
+<kw name="Replace String" library="String">
+<var>${city_value}</var>
+<arg>${lst_city}</arg>
+<arg>cityname</arg>
+<arg>${item}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:32:45.093" level="INFO">${city_value} = //li[text()='Berlin']</msg>
+<status status="PASS" starttime="20230727 14:32:45.093" endtime="20230727 14:32:45.093"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${city_value}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230727 14:32:45.109" level="INFO">Element '//li[text()='Berlin']' is displayed.</msg>
+<status status="PASS" starttime="20230727 14:32:45.093" endtime="20230727 14:32:45.109"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:45.093" endtime="20230727 14:32:45.109"/>
+</iter>
+<iter>
+<var name="${item}">Frankfurt</var>
+<kw name="Replace String" library="String">
+<var>${city_value}</var>
+<arg>${lst_city}</arg>
+<arg>cityname</arg>
+<arg>${item}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:32:45.109" level="INFO">${city_value} = //li[text()='Frankfurt']</msg>
+<status status="PASS" starttime="20230727 14:32:45.109" endtime="20230727 14:32:45.109"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${city_value}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230727 14:32:45.126" level="INFO">Element '//li[text()='Frankfurt']' is displayed.</msg>
+<status status="PASS" starttime="20230727 14:32:45.109" endtime="20230727 14:32:45.126"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:45.109" endtime="20230727 14:32:45.126"/>
+</iter>
+<iter>
+<var name="${item}">Munich</var>
+<kw name="Replace String" library="String">
+<var>${city_value}</var>
+<arg>${lst_city}</arg>
+<arg>cityname</arg>
+<arg>${item}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:32:45.126" level="INFO">${city_value} = //li[text()='Munich']</msg>
+<status status="PASS" starttime="20230727 14:32:45.126" endtime="20230727 14:32:45.126"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${city_value}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20230727 14:32:45.144" level="INFO">Element '//li[text()='Munich']' is displayed.</msg>
+<status status="PASS" starttime="20230727 14:32:45.126" endtime="20230727 14:32:45.144"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:45.126" endtime="20230727 14:32:45.144"/>
+</iter>
+<status status="PASS" starttime="20230727 14:32:45.059" endtime="20230727 14:32:45.144"/>
+</for>
+<status status="PASS" starttime="20230727 14:32:43.005" endtime="20230727 14:32:45.144"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:32:47.144" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230727 14:32:45.144" endtime="20230727 14:32:47.144"/>
+</kw>
+<kw name="close browser session" library="Generic" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230727 14:32:47.144" endtime="20230727 14:32:49.427"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:47.144" endtime="20230727 14:32:49.427"/>
+</kw>
+<tag>ALL</tag>
+<tag>DROP_DOWN</tag>
+<status status="PASS" starttime="20230727 14:32:14.246" endtime="20230727 14:32:49.427"/>
+</test>
+<test id="s1-t3" name="Verify course is choosed fromt the suggestions" line="242">
+<kw name="Open Browser with passed url" library="Generic" type="SETUP">
+<arg>${URL_Param}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=driver/chromedriver.exe</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20230727 14:32:49.427" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20230727 14:32:49.427" endtime="20230727 14:32:51.545"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230727 14:32:51.545" endtime="20230727 14:32:51.680"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL_Param}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230727 14:32:51.682" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
+<status status="PASS" starttime="20230727 14:32:51.681" endtime="20230727 14:32:56.366"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:33:01.368" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:32:56.367" endtime="20230727 14:33:01.368"/>
+</kw>
+<status status="PASS" starttime="20230727 14:32:49.427" endtime="20230727 14:33:01.368"/>
+</kw>
+<kw name="Navigate to" library="Generic">
+<arg>Element</arg>
+<arg>Dropdown</arg>
+<kw name="Replace String" library="String">
+<var>${nav_main}</var>
+<arg>${navigation_element}</arg>
+<arg>navigation_title</arg>
+<arg>${navigation_title}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:33:01.368" level="INFO">${nav_main} = //span[text()='Element']//preceding-sibling::i</msg>
+<status status="PASS" starttime="20230727 14:33:01.368" endtime="20230727 14:33:01.368"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nav_main}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230727 14:33:01.368" level="INFO">Clicking element '//span[text()='Element']//preceding-sibling::i'.</msg>
+<status status="PASS" starttime="20230727 14:33:01.368" endtime="20230727 14:33:01.427"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:33:06.427" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:33:01.427" endtime="20230727 14:33:06.427"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${nav_option}</var>
+<arg>${navigation_opt}</arg>
+<arg>navigation_opt</arg>
+<arg>${navigation_option}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:33:06.428" level="INFO">${nav_option} = //span[text()='Dropdown']//parent::a</msg>
+<status status="PASS" starttime="20230727 14:33:06.427" endtime="20230727 14:33:06.428"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${nav_option}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230727 14:33:06.428" level="INFO">Clicking link '//span[text()='Dropdown']//parent::a'.</msg>
+<status status="PASS" starttime="20230727 14:33:06.428" endtime="20230727 14:33:09.208"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:33:14.209" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:33:09.208" endtime="20230727 14:33:14.209"/>
+</kw>
+<status status="PASS" starttime="20230727 14:33:01.368" endtime="20230727 14:33:14.209"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:33:16.210" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230727 14:33:14.210" endtime="20230727 14:33:16.210"/>
+</kw>
+<kw name="Enter the course name and select the course" library="SecElementSubDropDownPage">
+<arg>sele</arg>
+<arg>Selenium WebDriver</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_choose_course}</arg>
+<arg>${input}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230727 14:33:16.210" level="INFO">Typing text 'sele' into text field '//h5[text()='Choose the Course']//following-sibling::div//input[@placeholder='Choose Course']'.</msg>
+<status status="PASS" starttime="20230727 14:33:16.210" endtime="20230727 14:33:16.315"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:33:20.316" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230727 14:33:16.315" endtime="20230727 14:33:20.316"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${lbl_choose_course}</var>
+<arg>${lbl_choose_course}</arg>
+<arg>coursename</arg>
+<arg>${coursename}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:33:20.316" level="INFO">${lbl_choose_course} = //li[@data-item-label="Selenium WebDriver"]</msg>
+<status status="PASS" starttime="20230727 14:33:20.316" endtime="20230727 14:33:20.316"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lbl_choose_course}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230727 14:33:20.316" level="INFO">Clicking element '//li[@data-item-label="Selenium WebDriver"]'.</msg>
+<status status="PASS" starttime="20230727 14:33:20.316" endtime="20230727 14:33:20.370"/>
+</kw>
+<status status="PASS" starttime="20230727 14:33:16.210" endtime="20230727 14:33:20.370"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:33:25.372" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:33:20.371" endtime="20230727 14:33:25.372"/>
+</kw>
+<kw name="close browser session" library="Generic" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230727 14:33:25.376" endtime="20230727 14:33:27.646"/>
+</kw>
+<status status="PASS" starttime="20230727 14:33:25.375" endtime="20230727 14:33:27.647"/>
+</kw>
+<tag>ALL</tag>
+<tag>DROP_DOWN</tag>
+<status status="PASS" starttime="20230727 14:32:49.427" endtime="20230727 14:33:27.647"/>
+</test>
+<test id="s1-t4" name="Verify Selection of langague and number system" line="249">
+<kw name="Open Browser with passed url" library="Generic" type="SETUP">
+<arg>${URL_Param}</arg>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>executable_path=driver/chromedriver.exe</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20230727 14:33:27.647" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20230727 14:33:27.647" endtime="20230727 14:33:29.683"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230727 14:33:29.683" endtime="20230727 14:33:29.800"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL_Param}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20230727 14:33:29.800" level="INFO">Opening url 'https://leafground.com/dashboard.xhtml'</msg>
+<status status="PASS" starttime="20230727 14:33:29.800" endtime="20230727 14:33:34.438"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:33:39.439" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:33:34.438" endtime="20230727 14:33:39.439"/>
+</kw>
+<status status="PASS" starttime="20230727 14:33:27.647" endtime="20230727 14:33:39.439"/>
+</kw>
+<kw name="Navigate to" library="Generic">
+<arg>Element</arg>
+<arg>Dropdown</arg>
+<kw name="Replace String" library="String">
+<var>${nav_main}</var>
+<arg>${navigation_element}</arg>
+<arg>navigation_title</arg>
+<arg>${navigation_title}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:33:39.440" level="INFO">${nav_main} = //span[text()='Element']//preceding-sibling::i</msg>
+<status status="PASS" starttime="20230727 14:33:39.440" endtime="20230727 14:33:39.440"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${nav_main}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230727 14:33:39.440" level="INFO">Clicking element '//span[text()='Element']//preceding-sibling::i'.</msg>
+<status status="PASS" starttime="20230727 14:33:39.440" endtime="20230727 14:33:39.494"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:33:44.495" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:33:39.494" endtime="20230727 14:33:44.495"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${nav_option}</var>
+<arg>${navigation_opt}</arg>
+<arg>navigation_opt</arg>
+<arg>${navigation_option}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:33:44.495" level="INFO">${nav_option} = //span[text()='Dropdown']//parent::a</msg>
+<status status="PASS" starttime="20230727 14:33:44.495" endtime="20230727 14:33:44.495"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>${nav_option}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20230727 14:33:44.495" level="INFO">Clicking link '//span[text()='Dropdown']//parent::a'.</msg>
+<status status="PASS" starttime="20230727 14:33:44.495" endtime="20230727 14:33:47.323"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:33:52.323" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:33:47.323" endtime="20230727 14:33:52.324"/>
+</kw>
+<status status="PASS" starttime="20230727 14:33:39.440" endtime="20230727 14:33:52.324"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:33:54.325" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230727 14:33:52.324" endtime="20230727 14:33:54.325"/>
+</kw>
+<kw name="Choose Langauge and number random" library="SecElementSubDropDownPage">
+<arg>${lang_dict}</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:33:59.325" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20230727 14:33:54.325" endtime="20230727 14:33:59.325"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${dict_data}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230727 14:33:59.325" endtime="20230727 14:33:59.325"/>
+</kw>
+<kw name="Get Random Key Value From Dict" library="CommonHelperFunction">
+<var>${lang_data}</var>
+<arg>${dict_data}</arg>
+<msg timestamp="20230727 14:33:59.325" level="INFO">${lang_data} = ('English', 'One')</msg>
+<status status="PASS" starttime="20230727 14:33:59.325" endtime="20230727 14:33:59.325"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${lang_data}[0]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230727 14:33:59.325" endtime="20230727 14:33:59.334"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${lang_data}[1]</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230727 14:33:59.334" endtime="20230727 14:33:59.334"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_slt_lang}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230727 14:33:59.334" level="INFO">Clicking element '//h5[text()='Choose language randomly']//following::label[text()='Select Language']//following-sibling::div[contains(@class,'trigger')]'.</msg>
+<status status="PASS" starttime="20230727 14:33:59.334" endtime="20230727 14:33:59.391"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${lst_lang_opt}</var>
+<arg>${lst_lang_opt}</arg>
+<arg>languageopt</arg>
+<arg>${lang_data}[0]</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:33:59.391" level="INFO">${lst_lang_opt} = //li[@data-label="English"]</msg>
+<status status="PASS" starttime="20230727 14:33:59.391" endtime="20230727 14:33:59.391"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${lst_lang_opt}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230727 14:33:59.391" level="INFO">Clicking element '//li[@data-label="English"]'.</msg>
+<status status="PASS" starttime="20230727 14:33:59.391" endtime="20230727 14:33:59.456"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:34:01.457" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20230727 14:33:59.456" endtime="20230727 14:34:01.457"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_slt_values}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230727 14:34:01.457" level="INFO">Clicking element '//h5[contains(text(),'language chosen')]//following::label[text()='Select Values']//following-sibling::div[contains(@class,'trigger')]'.</msg>
+<status status="PASS" starttime="20230727 14:34:01.457" endtime="20230727 14:34:01.508"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${btn_slt_lang_num}</var>
+<arg>${btn_slt_lang_num}</arg>
+<arg>languageoptnum</arg>
+<arg>${lang_data}[1]</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20230727 14:34:01.508" level="INFO">${btn_slt_lang_num} = //li[@data-label="One"]</msg>
+<status status="PASS" starttime="20230727 14:34:01.508" endtime="20230727 14:34:01.508"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_slt_lang_num}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230727 14:34:01.508" level="INFO">Clicking element '//li[@data-label="One"]'.</msg>
+<status status="PASS" starttime="20230727 14:34:01.508" endtime="20230727 14:34:01.554"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230727 14:34:05.554" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20230727 14:34:01.554" endtime="20230727 14:34:05.554"/>
+</kw>
+<status status="PASS" starttime="20230727 14:33:54.325" endtime="20230727 14:34:05.554"/>
+</kw>
+<kw name="close browser session" library="Generic" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230727 14:34:05.554" endtime="20230727 14:34:07.792"/>
+</kw>
+<status status="PASS" starttime="20230727 14:34:05.554" endtime="20230727 14:34:07.792"/>
+</kw>
+<tag>ALL</tag>
+<tag>DROP_DOWN</tag>
+<status status="PASS" starttime="20230727 14:33:27.647" endtime="20230727 14:34:07.792"/>
 </test>
 <doc>Perform Test on Dashboard</doc>
-<status status="PASS" starttime="20230529 13:36:10.224" endtime="20230529 13:36:43.145"/>
+<status status="PASS" starttime="20230727 14:31:43.086" endtime="20230727 14:34:07.792"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">ALL</stat>
-<stat pass="1" fail="0" skip="0">BUTTON</stat>
+<stat pass="4" fail="0" skip="0">ALL</stat>
+<stat pass="4" fail="0" skip="0">DROP_DOWN</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="testDemo10">testDemo10</stat>
+<stat pass="4" fail="0" skip="0" id="s1" name="testDemo10">testDemo10</stat>
 </suite>
 </statistics>
 <errors>

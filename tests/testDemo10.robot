@@ -8,12 +8,21 @@ Resource    ../PO/SecBrowserSubWindowPage.robot
 Resource    ../PO/SecBrowserSubDragDropPage.robot
 Resource    ../PO/SecElementSubTextBoxPage.robot
 Resource    ../PO/SecElementSubButtonPage.robot
+Resource    ../PO/SecElementSubDropDownPage.robot
 Test Setup    Open Browser With passed Url    ${URL_Param}
 Test Teardown   close browser session
 Library    String
 
 *** Variables ***
 ${URL_Param}    https://leafground.com/dashboard.xhtml
+${drp_down_ui_auto}     //h5[contains(text(),'UI Automation tool')]//parent::div[@class='card']//select[@class='ui-selectonemenu']
+@{expected_tool_opt_lst}    Select Tool  Selenium    Playwright  Puppeteer   Cypress
+${input_dwn_pref_country}     //h5[contains(text(),'preferred country')]//parent::div[@class='card']//label[text()='Select Country']
+${input_dwn_city}     //h5[contains(text(),'Confirm Cities')]//parent::div[@class='card']//label[text()='Select City']
+@{expected_city_opt_lst}    Select City     Berlin  Frankfurt   Munich
+@{list_of_num_en}   One     Two     Three
+@{list_of_num_kn}   ಎರಡು    ಒಂದು    ಮೂರು
+&{lang_dict}    English=@{list_of_num_en}   Kannada=@{list_of_num_kn}
 
 *** Test Cases ***
 Select Weekly Tasks
@@ -208,3 +217,37 @@ Verify if color change while mouse hover on the element
     Navigate To    Element      Button
     Mouse over and confirm the color changed
     Sleep    2
+
+Verify drop down selection on UI Automation Tool
+    [Tags]    DROP_DOWN     ALL
+    Navigate To     Element     Dropdown
+    ${actual_opt_lst}=   Get all values of the selected list     ${drp_down_ui_auto}
+    Log To Console    ${actual_opt_lst}
+    Verify if all expected options are displayed    ${actual_opt_lst}   ${expected_tool_opt_lst}
+    Select the value from the drop down     ${drp_down_ui_auto}     Selenium
+    ${expected_opt}=    Verify expected option selected     ${drp_down_ui_auto}
+    Log To Console    ${expected_opt}
+    Should Be Equal    ${expected_opt}  Selenium
+    Sleep   2
+
+Verify Cities belonging to prefered country is loaded
+    [Tags]    DROP_DOWN     ALL
+    Navigate To     Element     Dropdown
+    Sleep   2
+    Select The Country From The Drop Down    ${input_dwn_pref_country}  Germany
+    Sleep   2
+    Verify if Expected Cities loaded    ${input_dwn_city}   ${expected_city_opt_lst}
+    Sleep   2
+
+Verify course is choosed fromt the suggestions
+    [Tags]    DROP_DOWN     ALL
+    Navigate To     Element     Dropdown
+    Sleep   2
+    Enter the course name and select the course     sele    Selenium WebDriver
+    Sleep    5
+
+Verify Selection of langague and number system
+    [Tags]    DROP_DOWN     ALL
+    Navigate To     Element     Dropdown
+    Sleep   2
+    Choose Langauge and number random   ${lang_dict}

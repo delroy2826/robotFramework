@@ -51,3 +51,17 @@ Navigate to
     ${nav_option}=    Replace String    ${navigation_opt}     navigation_opt    ${navigation_option}
     Click Link    ${nav_option}
     Sleep    5
+
+Get all values of the selected list
+    [Arguments]    ${locator_for_select}
+    ${list_of_options}=     Get List Items    ${locator_for_select}
+    [Return]    ${list_of_options}
+
+Select the value from the drop down
+    [Arguments]    ${locator_for_select}    ${value}
+    Select From List By Label   ${locator_for_select}  ${value}
+
+Verify expected option selected
+    [Arguments]    ${locator_for_select}
+    ${actual_value}=    Get Selected List Value    ${locator_for_select}
+    [Return]    ${actual_value}
